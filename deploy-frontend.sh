@@ -12,10 +12,10 @@ echo "— NODE_ENV: ${NODE_ENV}"
 echo "— LOCATION: ${LOCATION}" # LOCATION: europe-west2
 echo "— DOMAIN_NAME: ${DOMAIN_NAME}" # SERVER_IMAGE_NAME
 echo "— PROJECT_NAME: ${PROJECT_NAME}" # PROJECT_NAME
-echo "— MONGO_URI: ${MONGO_URI}" # MONGO_URI
+echo "— NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL}" # MONGO_URI
 
 echo "Building Frontend Image ${DOMAIN_NAME}-frontend:${IMAGE_TAG}, and tagging as latest..."
-docker build  -f ./frontend/Dockerfile -t "${LOCATION}-docker.pkg.dev/${PROJECT_NAME}/frontend/${DOMAIN_NAME}-frontend:${IMAGE_TAG}" --build-arg NODE_ENV="${NODE_ENV}" --build-arg MONGO_URI="${MONGO_URI}" ./frontend
+docker build  -f ./frontend/Dockerfile -t "${LOCATION}-docker.pkg.dev/${PROJECT_NAME}/frontend/${DOMAIN_NAME}-frontend:${IMAGE_TAG}" --build-arg NODE_ENV="${NODE_ENV}" --build-arg NEXT_PUBLIC_SERVER_URL="${NEXT_PUBLIC_SERVER_URL}" ./frontend
 docker push "${LOCATION}-docker.pkg.dev/${PROJECT_NAME}/frontend/${DOMAIN_NAME}-frontend:${IMAGE_TAG}"
 
 docker tag "${LOCATION}-docker.pkg.dev/${PROJECT_NAME}/frontend/${DOMAIN_NAME}-frontend:${IMAGE_TAG}" "${LOCATION}-docker.pkg.dev/${PROJECT_NAME}/frontend/${DOMAIN_NAME}-frontend:latest"
