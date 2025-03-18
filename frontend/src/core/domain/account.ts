@@ -88,7 +88,8 @@ export class Account {
   static fromJSON(data: Record<string, unknown> = {}): Account {
     const asset = data.asset ? Asset.fromJSON(data.asset as Record<string, unknown>) : null
 
-    const serverURL = process.env.NEXT_PUBLIC_SERVER_URL
+    const BASE_URL = process.env.NEXT_PUBLIC_SERVER_URL ?? 'http://localhost:8000'
+    const serverURL = BASE_URL
     let assetUrl = null
     if (asset) {
       assetUrl = asset.path ? `${serverURL}/assets/${asset.path}` : asset.path

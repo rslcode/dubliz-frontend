@@ -1,6 +1,8 @@
+const BASE_URL = process.env.NEXT_PUBLIC_SERVER_URL ?? 'http://localhost:8000'
+
 export const getCategories = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/category`, {
+    const response = await fetch(`${BASE_URL}/category`, {
       next: { revalidate: 60 },
       method: 'GET',
     })
@@ -18,7 +20,7 @@ export const getCategories = async () => {
 
 export const getCurrencies = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/currency`, {
+    const response = await fetch(`${BASE_URL}/currency`, {
       next: { revalidate: 3600 },
       method: 'GET',
     })
@@ -36,7 +38,7 @@ export const getCurrencies = async () => {
 
 export const getPaymentProducts = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/web-payment-product`, {
+    const response = await fetch(`${BASE_URL}/web-payment-product`, {
       next: { revalidate: 3600 },
       method: 'GET',
     })
@@ -54,7 +56,7 @@ export const getPaymentProducts = async () => {
 
 export const getExchangeRates = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/exchange-rate`, {
+    const response = await fetch(`${BASE_URL}/exchange-rate`, {
       // Revalidate every 15 minutes
       next: { revalidate: 900 },
       method: 'GET',
@@ -74,7 +76,7 @@ export const getExchangeRates = async () => {
 export const getAvailablePayments = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/payment/available-payments`,
+      `${BASE_URL}/payment/available-payments`,
       {
         method: 'GET',
       }
@@ -93,7 +95,7 @@ export const getAvailablePayments = async () => {
 
 export const getSettings = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/settings`, {
+    const response = await fetch(`${BASE_URL}/settings`, {
       next: { revalidate: 100 },
       method: 'GET',
     })
