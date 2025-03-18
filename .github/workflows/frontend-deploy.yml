@@ -1,0 +1,55 @@
+name: Deploy frontend
+
+on:
+  workflow_dispatch:
+
+env:
+  SERVER_USER: "epicms"
+  PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+  GITHUB_SHA: ${{ github.sha }}
+  GITHUB_REF: ${{ github.ref }}
+  SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+  GCR_KEY: ${{ secrets.GCR_KEY }}
+  SSH_KEY: ${{ secrets.SSH_KEY }}
+  SERVER_PUBLIC_KEY: ${{ secrets.SERVER_PUBLIC_KEY }}
+  SERVER_IP: ${{ secrets.SERVER_IP }}
+  GIT_USER: ${{ secrets.GIT_USER }}
+  GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+  EMAIL: ${{ secrets.EMAIL }}
+  DOMAIN_NAME: ${{ secrets.DOMAIN_NAME }}
+  NODE_ENV: "prod"
+  MONGODB_USER: ${{ secrets.MONGODB_USER }}
+  MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+  MONGODB_REPLICA_SET: ${{ secrets.MONGODB_REPLICA_SET }}
+  MONGODB_AUTH_MECHANISM: ${{ secrets.MONGODB_AUTH_MECHANISM }}
+  MONGO_URI: ${{ secrets.MONGO_URI }}
+  JWT_SECRET: "JWT_SECRET"
+  STORAGE_KEY: ${{ secrets.STORAGE_KEY }}
+  LOCATION: ${{ secrets.LOCATION }}
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, and Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Setup gcloud CLI
+      - name: Set up gcloud CLI
+        uses: google-github-actions/setup-gcloud@v0.3.0
+        with:
+          version: "429.0.0"
+          service_account_key: ${{ secrets.GCR_KEY }}
+
+      # Configure docker
+      - name: Authenticate Docker
+        run: |
+          gcloud auth configure-docker
+
+      # Run Deploy Bash Script
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run bash script to build and deploy on hosted server
+        run: bash run-deploy-frontend.sh
