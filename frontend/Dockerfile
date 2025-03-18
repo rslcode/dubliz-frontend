@@ -23,9 +23,9 @@ COPY --from=deps /frontend/node_modules ./node_modules
 COPY .. .
 
 ARG NODE_ENV
-ARG BASE_URL
+ARG NEXT_PUBLIC_SERVER_URL
 ENV NODE_ENV=prod
-ENV NEXT_PUBLIC_BASE_URL=${BASE_URL}
+ENV NEXT_PUBLIC_SERVER_URL=${NEXT_PUBLIC_SERVER_URL}
 RUN npm run build
 
 # Production image, copy all the files and run next
