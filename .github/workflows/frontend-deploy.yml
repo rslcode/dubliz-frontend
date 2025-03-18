@@ -23,7 +23,7 @@ env:
   MONGODB_REPLICA_SET: ${{ secrets.MONGODB_REPLICA_SET }}
   MONGODB_AUTH_MECHANISM: ${{ secrets.MONGODB_AUTH_MECHANISM }}
   MONGO_URI: ${{ secrets.MONGO_URI }}
-  JWT_SECRET: "JWT_SECRET"
+  JWT_SECRET:  ${{ secrets.JWT_SECRET }}
   STORAGE_KEY: ${{ secrets.STORAGE_KEY }}
   LOCATION: ${{ secrets.LOCATION }}
 

@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  frontend:
+    image: ${LOCATION}-docker.pkg.dev/${PROJECT_NAME}/frontend/${DOMAIN_NAME}-frontend:latest
+    container_name: ${DOMAIN_NAME}-frontend
+    restart: always
+    networks:
+      - base
+    environment:
+      - NEXT_PUBLIC_PROTOCOL=${NEXT_PUBLIC_PROTOCOL}
+      - NEXT_PUBLIC_FRONT_END_ENV=${NEXT_PUBLIC_FRONT_END_ENV}
+      - NEXT_PUBLIC_SERVER_ORIGIN=${NEXT_PUBLIC_SERVER_ORIGIN}
+    ports:
+      - "8002:8002"
+networks:
+  base:
+    name: base
