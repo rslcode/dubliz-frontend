@@ -59,7 +59,6 @@ const nextConfig: NextConfig = {
   },
   transpilePackages: ['next-themes', 'cookies-next'],
   env: {
-    NEXT_PUBLIC_SERVER_URL: "localhost:8000"
   },
   webpack(config) {
     config.module.rules.push({

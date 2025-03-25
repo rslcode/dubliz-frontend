@@ -16,6 +16,7 @@ LOCATION="${LOCATION}" \
 DOMAIN_NAME="${DOMAIN_NAME}" \
 MONGO_URI="${MONGO_URI}" \
 PROJECT_NAME="${PROJECT_NAME}" \
+NEXT_PUBLIC_SERVER_URL="${NEXT_PUBLIC_SERVER_URL}" \
 sh ./deploy-frontend.sh
 
 ssh -i ssh_key "${SERVER_USER}"@"${SERVER_IP}" -o "StrictHostKeyChecking no"  \

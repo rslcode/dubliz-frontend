@@ -1,7 +1,7 @@
 import { createSession, removeSession } from '@/app/actions/auth-actions'
 import { AuthController } from '../controllers/auth'
 
-const BASE_URL = process.env.NEXT_PUBLIC_SERVER_URL ?? 'http://localhost:8000'
+const BASE_URL = process.env.NEXT_PUBLIC_SERVER_URL
 export enum RequestType {
   GET = 'GET',
   POST = 'POST',
