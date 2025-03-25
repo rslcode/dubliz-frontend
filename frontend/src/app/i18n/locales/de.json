@@ -31,8 +31,8 @@
   "share": {
     "button": "Teilen",
     "share_on": "Teilen auf {{name}}",
-    "check_auction": "Sieh dir diese Auktion auf Biddo an",
-    "check_account": "Sieh dir dieses Konto auf Biddo an"
+    "check_auction": "Sieh dir diese Auktion auf Dubliz an",
+    "check_account": "Sieh dir dieses Konto auf Dubliz an"
   },
   "terms_conditions": {
     "titles": {
@@ -155,8 +155,8 @@
     "phone_login_description": "Seite zum Anmelden mit der Telefonnummer",
     "phone_otp_title": "Telefonnummer bestätigen",
     "phone_otp_description": "Seite zum Bestätigen der Telefonnummer",
-    "home_title": "Biddo, Startseite",
-    "home_description": "Biddo, Startseite der Anwendung",
+    "home_title": "Dubliz, Startseite",
+    "home_description": "Dubliz, Startseite der Anwendung",
     "create_auction_title": "Auktion erstellen",
     "create_auction_description": "Eine neue Auktion erstellen",
     "not_found_title": "Seite nicht gefunden",
@@ -209,7 +209,7 @@
     "faq": "Häufig gestellte Fragen",
     "mobile_app": "Mobile App",
     "enjoy_better_experience": "Genießen Sie eine bessere Erfahrung mit unserer mobilen App",
-    "about_motto": "Biddo ist eine Plattform, auf der Sie Artikel, die Sie nicht mehr benötigen, verkaufen und Artikel, die Sie möchten, kaufen können."
+    "about_motto": "Dubliz ist eine Plattform, auf der Sie Artikel, die Sie nicht mehr benötigen, verkaufen und Artikel, die Sie möchten, kaufen können."
   },
   "cookie": {
     "message": "Diese Website verwendet Cookies, um die Benutzererfahrung zu verbessern. Durch die Nutzung unserer Website stimmen Sie allen Cookies gemäß unserer Cookie-Richtlinie zu.",

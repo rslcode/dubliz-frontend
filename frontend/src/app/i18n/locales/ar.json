@@ -37,8 +37,8 @@
   "share": {
     "button": "مشاركة",
     "share_on": "مشاركة على {{name}}",
-    "check_auction": "تفقد هذا المزاد على Biddo",
-    "check_account": "تفقد هذا الحساب على Biddo"
+    "check_auction": "تفقد هذا المزاد على Dubliz",
+    "check_account": "تفقد هذا الحساب على Dubliz"
   },
   "terms_conditions": {
     "titles": {
@@ -149,8 +149,8 @@
     }
   },
   "pageSEO": {
-    "starting_soon_title": "المزادات التي ستبدأ قريبًا على Biddo",
-    "starting_soon_description": "تفقد المزادات التي ستبدأ قريبًا على Biddo وأضفها إلى المفضلة لتلقي إشعارات عند البدء",
+    "starting_soon_title": "المزادات التي ستبدأ قريبًا على Dubliz",
+    "starting_soon_description": "تفقد المزادات التي ستبدأ قريبًا على Dubliz وأضفها إلى المفضلة لتلقي إشعارات عند البدء",
     "terms_title": "الشروط والأحكام وسياسة الخصوصية",
     "terms_description": "اقرأ الشروط والأحكام وسياسة الخصوصية الخاصة بالتطبيق",
     "login_title": "صفحة تسجيل الدخول",
@@ -161,8 +161,8 @@
     "phone_login_description": "صفحة تسجيل الدخول بالرقم المرجعي",
     "phone_otp_title": "التحقق من الرقم المرجعي",
     "phone_otp_description": "صفحة التحقق من الرقم المرجعي",
-    "home_title": "Biddo، الصفحة الرئيسية",
-    "home_description": "Biddo، الصفحة الرئيسية للتطبيق",
+    "home_title": "Dubliz، الصفحة الرئيسية",
+    "home_description": "Dubliz، الصفحة الرئيسية للتطبيق",
     "create_auction_title": "إنشاء مزاد",
     "create_auction_description": "إنشاء مزاد جديد",
     "not_found_title": "الصفحة غير موجودة",
@@ -215,7 +215,7 @@
     "faq": "الأسئلة الشائعة",
     "mobile_app": "تطبيق الجوال",
     "enjoy_better_experience": "استمتع بتجربة أفضل مع تطبيقنا للجوال",
-    "about_motto": "Biddo هو منصة يمكنك فيها بيع الأشياء التي لم تعد بحاجة إليها وشراء الأشياء التي تريدها."
+    "about_motto": "Dubliz هو منصة يمكنك فيها بيع الأشياء التي لم تعد بحاجة إليها وشراء الأشياء التي تريدها."
   },
   "cookie": {
     "message": "يستخدم هذا الموقع الكوكيز لتحسين تجربة المستخدم. باستخدام موقعنا فإنك توافق على جميع الكوكيز وفقًا لسياسة الكوكيز.",

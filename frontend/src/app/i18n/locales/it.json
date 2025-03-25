@@ -31,8 +31,8 @@
   "share": {
     "button": "Condividi",
     "share_on": "Condividi su {{name}}",
-    "check_auction": "Guarda questa asta su Biddo",
-    "check_account": "Guarda questo account su Biddo"
+    "check_auction": "Guarda questa asta su Dubliz",
+    "check_account": "Guarda questo account su Dubliz"
   },
   "terms_conditions": {
     "titles": {
@@ -143,8 +143,8 @@
     }
   },
   "pageSEO": {
-    "starting_soon_title": "Aste che iniziano a breve su Biddo",
-    "starting_soon_description": "Scopri le aste che inizieranno a breve su Biddo. Aggiungi le aste ai preferiti per ricevere una notifica quando iniziano.",
+    "starting_soon_title": "Aste che iniziano a breve su Dubliz",
+    "starting_soon_description": "Scopri le aste che inizieranno a breve su Dubliz. Aggiungi le aste ai preferiti per ricevere una notifica quando iniziano.",
     "terms_title": "Termini e Condizioni e Informativa sulla Privacy",
     "terms_description": "Leggi i Termini e Condizioni e l'Informativa sulla Privacy dell'applicazione",
     "login_title": "Pagina di accesso",
@@ -155,8 +155,8 @@
     "phone_login_description": "Pagina di accesso con numero di telefono",
     "phone_otp_title": "Verifica numero di telefono",
     "phone_otp_description": "Pagina di verifica numero di telefono",
-    "home_title": "Biddo, Pagina iniziale",
-    "home_description": "Biddo, Pagina iniziale dell'applicazione",
+    "home_title": "Dubliz, Pagina iniziale",
+    "home_description": "Dubliz, Pagina iniziale dell'applicazione",
     "create_auction_title": "Crea asta",
     "create_auction_description": "Crea una nuova asta",
     "not_found_title": "Pagina non trovata",
@@ -209,7 +209,7 @@
     "faq": "Domande frequenti",
     "mobile_app": "App mobile",
     "enjoy_better_experience": "Goditi un'esperienza migliore con la nostra app mobile",
-    "about_motto": "Biddo è una piattaforma dove puoi vendere articoli di cui non hai più bisogno e acquistare quelli che desideri."
+    "about_motto": "Dubliz è una piattaforma dove puoi vendere articoli di cui non hai più bisogno e acquistare quelli che desideri."
   },
   "cookie": {
     "message": "Questo sito utilizza i cookie per migliorare l'esperienza utente. Utilizzando il nostro sito acconsenti a tutti i cookie in conformità con la nostra Politica sui Cookie.",

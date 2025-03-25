@@ -31,8 +31,8 @@
   "share": {
     "button": "Compartir",
     "share_on": "Compartir en {{name}}",
-    "check_auction": "Mira esta subasta en Biddo",
-    "check_account": "Mira esta cuenta en Biddo"
+    "check_auction": "Mira esta subasta en Dubliz",
+    "check_account": "Mira esta cuenta en Dubliz"
   },
   "terms_conditions": {
     "titles": {
@@ -143,8 +143,8 @@
     }
   },
   "pageSEO": {
-    "starting_soon_title": "Subastas que comienzan pronto en Biddo",
-    "starting_soon_description": "Mira las subastas que comienzan pronto en Biddo y prepárate para hacer ofertas en tus artículos favoritos.",
+    "starting_soon_title": "Subastas que comienzan pronto en Dubliz",
+    "starting_soon_description": "Mira las subastas que comienzan pronto en Dubliz y prepárate para hacer ofertas en tus artículos favoritos.",
     "terms_title": "Términos y Condiciones y Política de Privacidad",
     "terms_description": "Lee los Términos y Condiciones y la Política de Privacidad de la aplicación",
     "login_title": "Página de inicio de sesión",
@@ -155,8 +155,8 @@
     "phone_login_description": "Página de inicio de sesión con número de teléfono",
     "phone_otp_title": "Verificación de número de teléfono",
     "phone_otp_description": "Página de verificación de número de teléfono",
-    "home_title": "Biddo, Página principal",
-    "home_description": "Biddo, Página principal de la aplicación",
+    "home_title": "Dubliz, Página principal",
+    "home_description": "Dubliz, Página principal de la aplicación",
     "create_auction_title": "Crear subasta",
     "create_auction_description": "Crear una nueva subasta",
     "not_found_title": "Página no encontrada",
@@ -209,7 +209,7 @@
     "faq": "Preguntas frecuentes",
     "mobile_app": "Aplicación móvil",
     "enjoy_better_experience": "Disfruta de una mejor experiencia con nuestra aplicación móvil",
-    "about_motto": "Biddo es una plataforma donde puedes vender artículos que ya no necesitas y comprar los que deseas."
+    "about_motto": "Dubliz es una plataforma donde puedes vender artículos que ya no necesitas y comprar los que deseas."
   },
   "cookie": {
     "message": "Este sitio web utiliza cookies para mejorar la experiencia del usuario. Al usar nuestro sitio, aceptas todas las cookies de acuerdo con nuestra Política de Cookies.",

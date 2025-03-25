@@ -31,8 +31,8 @@
   "share": {
     "button": "共有",
     "share_on": "{{name}}で共有",
-    "check_auction": "Biddoでこのオークションをチェック",
-    "check_account": "Biddoでこのアカウントをチェック"
+    "check_auction": "Dubliz でこのオークションをチェック",
+    "check_account": "Dubliz でこのアカウントをチェック"
   },
   "terms_conditions": {
     "titles": {
@@ -155,8 +155,8 @@
     "phone_login_description": "電話番号でログインするページ",
     "phone_otp_title": "電話番号を確認",
     "phone_otp_description": "電話番号を確認するページ",
-    "home_title": "Biddo、ホームページ",
-    "home_description": "Biddo、アプリケーションのホームページ",
+    "home_title": "Dubliz、ホームページ",
+    "home_description": "Dubliz、アプリケーションのホームページ",
     "create_auction_title": "オークションを作成",
     "create_auction_description": "新しいオークションを作成する",
     "not_found_title": "ページが見つかりません",
@@ -209,7 +209,7 @@
     "faq": "よくある質問",
     "mobile_app": "モバイルアプリ",
     "enjoy_better_experience": "モバイルアプリでより良い体験をお楽しみください",
-    "about_motto": "Biddoは、不要になったアイテムを売ったり、欲しいものを購入したりできるプラットフォームです。"
+    "about_motto": "Dubliz は、不要になったアイテムを売ったり、欲しいものを購入したりできるプラットフォームです。"
   },
   "cookie": {
     "message": "このウェブサイトは、ユーザーエクスペリエンスを向上させるためにクッキーを使用しています。当サイトを使用することで、クッキーポリシーに従いすべてのクッキーに同意したものとみなされます。",

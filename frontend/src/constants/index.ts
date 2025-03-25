@@ -8,7 +8,7 @@ export const MOBILE_APP_LINKS = {
   APP_STORE_LINK: 'https://www.apple.com/ios/app-store/',
 }
 
-export const APP_NAME = 'Biddo'
+export const APP_NAME = 'Dubliz'
 
 export const SESSION_COOKIE_NAME = 'session_cookie'
 

@@ -31,8 +31,8 @@
   "share": {
     "button": "Distribuie",
     "share_on": "Distribuie pe {{name}}",
-    "check_auction": "Verifică această licitație pe Biddo",
-    "check_account": "Verifică acest cont pe Biddo"
+    "check_auction": "Verifică această licitație pe Dubliz",
+    "check_account": "Verifică acest cont pe Dubliz"
   },
   "terms_conditions": {
     "titles": {
@@ -143,8 +143,8 @@
     }
   },
   "pageSEO": {
-    "starting_soon_title": "Licitații care încep în curând pe Biddo",
-    "starting_soon_description": "Vezi licitațiile care încep în curând pe Biddo. Adaugă-le la favorite pentru a primi notificări când încep.",
+    "starting_soon_title": "Licitații care încep în curând pe Dubliz",
+    "starting_soon_description": "Vezi licitațiile care încep în curând pe Dubliz. Adaugă-le la favorite pentru a primi notificări când încep.",
     "terms_title": "Termeni și Condiții și Politica de Confidențialitate",
     "terms_description": "Citește Termenii și Condițiile și Politica de Confidențialitate a aplicației",
     "login_title": "Pagina de autentificare",
@@ -155,8 +155,8 @@
     "phone_login_description": "Pagina de autentificare cu numărul de telefon",
     "phone_otp_title": "Verificare număr de telefon",
     "phone_otp_description": "Pagina de verificare număr de telefon",
-    "home_title": "Biddo, Pagina principală",
-    "home_description": "Biddo, Pagina principală a aplicației",
+    "home_title": "Dubliz, Pagina principală",
+    "home_description": "Dubliz, Pagina principală a aplicației",
     "create_auction_title": "Creează licitație",
     "create_auction_description": "Creează o licitație nouă",
     "not_found_title": "Pagină negăsită",
@@ -209,7 +209,7 @@
     "faq": "Întrebări frecvente",
     "mobile_app": "Aplicație mobilă",
     "enjoy_better_experience": "Bucură-te de o experiență mai bună cu aplicația noastră mobilă",
-    "about_motto": "Biddo este o platformă unde poți vinde articolele de care nu mai ai nevoie și cumpăra ceea ce îți dorești."
+    "about_motto": "Dubliz este o platformă unde poți vinde articolele de care nu mai ai nevoie și cumpăra ceea ce îți dorești."
   },
   "cookie": {
     "message": "Acest site folosește cookie-uri pentru a îmbunătăți experiența utilizatorului. Prin utilizarea site-ului nostru, ești de acord cu toate cookie-urile conform Politicii noastre privind Cookie-urile.",

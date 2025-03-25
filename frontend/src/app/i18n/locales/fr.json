@@ -31,8 +31,8 @@
   "share": {
     "button": "Partager",
     "share_on": "Partager sur {{name}}",
-    "check_auction": "Découvrez cette enchère sur Biddo",
-    "check_account": "Découvrez ce compte sur Biddo"
+    "check_auction": "Découvrez cette enchère sur Dubliz",
+    "check_account": "Découvrez ce compte sur Dubliz"
   },
   "terms_conditions": {
     "titles": {
@@ -144,7 +144,7 @@
   },
   "pageSEO": {
     "starting_soon_title": "Enchères qui commencent bientôt",
-    "starting_soon_description": "Découvrez les enchères qui commencent bientôt sur Biddo. Créez une alerte pour recevoir une notification lorsque l'enchère commence.",
+    "starting_soon_description": "Découvrez les enchères qui commencent bientôt sur Dubliz. Créez une alerte pour recevoir une notification lorsque l'enchère commence.",
     "terms_title": "Conditions Générales et Politique de Confidentialité",
     "terms_description": "Lisez les Conditions Générales et la Politique de Confidentialité de l'application",
     "login_title": "Page de connexion",
@@ -155,8 +155,8 @@
     "phone_login_description": "Page de connexion avec le numéro de téléphone",
     "phone_otp_title": "Vérification du numéro de téléphone",
     "phone_otp_description": "Page de vérification du numéro de téléphone",
-    "home_title": "Biddo, Page d'accueil",
-    "home_description": "Biddo, Page d'accueil de l'application",
+    "home_title": "Dubliz, Page d'accueil",
+    "home_description": "Dubliz, Page d'accueil de l'application",
     "create_auction_title": "Créer une enchère",
     "create_auction_description": "Créer une nouvelle enchère",
     "not_found_title": "Page introuvable",
@@ -209,7 +209,7 @@
     "faq": "FAQ",
     "mobile_app": "Application mobile",
     "enjoy_better_experience": "Profitez d'une meilleure expérience avec notre application mobile",
-    "about_motto": "Biddo est une plateforme où vous pouvez vendre des articles dont vous n'avez plus besoin et acheter ceux que vous souhaitez."
+    "about_motto": "Dubliz est une plateforme où vous pouvez vendre des articles dont vous n'avez plus besoin et acheter ceux que vous souhaitez."
   },
   "cookie": {
     "message": "Ce site utilise des cookies pour améliorer l'expérience utilisateur. En utilisant notre site, vous consentez à tous les cookies conformément à notre politique en matière de cookies.",

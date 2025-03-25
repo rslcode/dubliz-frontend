@@ -37,8 +37,8 @@
   "share": {
     "button": "Share",
     "share_on": "Share on {{name}}",
-    "check_auction": "Check this auction on Biddo",
-    "check_account": "Check this account on Biddo"
+    "check_auction": "Check this auction on Dubliz",
+    "check_account": "Check this account on Dubliz"
   },
   "terms_conditions": {
     "titles": {
@@ -150,7 +150,7 @@
   },
   "pageSEO": {
     "starting_soon_title": "Starting soon auctions",
-    "starting_soon_description": "Check out the auctions that are starting soon on Biddo",
+    "starting_soon_description": "Check out the auctions that are starting soon on Dubliz",
     "terms_title": "Terms and Conditions & Privacy Policy",
     "terms_description": "Read the Terms and Conditions and Privacy Policy of the application",
     "login_title": "Login Page",
@@ -161,8 +161,8 @@
     "phone_login_description": "Phone login page",
     "phone_otp_title": "Phone OTP",
     "phone_otp_description": "Phone OTP page",
-    "home_title": "Biddo, Home Page",
-    "home_description": "Biddo, Home page of the application",
+    "home_title": "Dubliz, Home Page",
+    "home_description": "Dubliz, Home page of the application",
     "create_auction_title": "Create auction",
     "create_auction_description": "Create a new auction",
     "not_found_title": "Page not found",
@@ -215,7 +215,7 @@
     "faq": "FAQ",
     "mobile_app": "Mobile app",
     "enjoy_better_experience": "Enjoy a better experience with our mobile app",
-    "about_motto": "Biddo is a platform where you can sell items you no longer need and buy items you want."
+    "about_motto": "Dubliz is a platform where you can sell items you no longer need and buy items you want."
   },
   "cookie": {
     "message": "This website uses cookies to improve user experience. By using our website you consent to all cookies in accordance with our Cookie Policy.",
