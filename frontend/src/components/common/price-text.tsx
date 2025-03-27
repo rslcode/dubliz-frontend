@@ -18,7 +18,7 @@ export const PriceText = observer((props: PriceTextProps) => {
   const { price, style, maxLines, useIntegerOnly = false, overflow, textAlign, initialCurrencyId, initialCurrencyIsSameAsTargetCurrency } = props
   const globalContext = useGlobalContext()
   const { appCurrencies, appExchangeRate } = globalContext
-  const locale = navigator.language
+  const locale = typeof window !== "undefined" ? navigator.language : "en-US"
 
   const currentCurrency = useCurrentCurrency()
 
