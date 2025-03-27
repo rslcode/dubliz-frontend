@@ -1,4 +1,4 @@
-const BASE_URL = process.env.NEXT_PUBLIC_SERVER_URL
+import { BASE_URL } from '@/core/config'
 
 export const getCategories = async () => {
   try {

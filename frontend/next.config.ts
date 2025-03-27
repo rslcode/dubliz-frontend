@@ -6,6 +6,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 })
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   images: {
     unoptimized: true,
     minimumCacheTTL: 3600,
@@ -58,14 +59,11 @@ const nextConfig: NextConfig = {
     ]
   },
   transpilePackages: ['next-themes', 'cookies-next'],
-  env: {
-  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     })
-
     return config
   },
 }

@@ -26,6 +26,7 @@ env:
   JWT_SECRET:  ${{ secrets.JWT_SECRET }}
   STORAGE_KEY: ${{ secrets.STORAGE_KEY }}
   LOCATION: ${{ secrets.LOCATION }}
+  NEXT_PUBLIC_SERVER_URL: 'http://dubliz.store/'
 
 jobs:
   setup-build-publish-deploy:

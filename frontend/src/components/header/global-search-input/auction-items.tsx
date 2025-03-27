@@ -5,6 +5,7 @@ import DefaultAssetImage from '@/../public/assets/img/default-item.jpeg'
 import Image from 'next/image'
 import { observer } from 'mobx-react-lite'
 import useGlobalContext from '@/hooks/use-context'
+import { BASE_URL } from '@/core/config'
 
 export const GlobalSearchAuctionItem = observer(
   (props: { auction: Auction; onClick?: () => void }) => {
@@ -37,7 +38,7 @@ export const GlobalSearchAuctionItem = observer(
           />
         )
       }
-      const serverBaseURL = process.env.NEXT_PUBLIC_SERVER_URL
+      const serverBaseURL = BASE_URL
       const firstAsset = auction.assets[0]
 
       return (

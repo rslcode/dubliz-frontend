@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import useGlobalContext from '@/hooks/use-context'
 import { useTranslation } from "@/app/i18n/client";
 import { AssetsGalleryModal } from "../auction-form/assets/assets-gallery";
-
+import { BASE_URL } from '@/core/config'
 export const AssetsMessage = (params: { message: ChatMessage }) => {
   const globalContext = useGlobalContext()
   const currentLanguage = globalContext.currentLanguage
   const { t } = useTranslation(currentLanguage)
 
-  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
+  const serverUrl = BASE_URL;
   const [assetsGalleryOpened, setAssetsGalleryOpened] = useState(false);
   const [constructedImagePaths, setConstructedImagePaths] = useState<string[]>([]);
 

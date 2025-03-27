@@ -4,10 +4,11 @@ import { Metadata } from 'next'
 import { useTranslation } from '../../../i18n/index'
 import { PageWrapper } from '@/components/page-wrapper'
 import { StartingSoonAuctionsRoot } from './root'
+import { BASE_URL } from '@/core/config'
 
 const getStartingSoonAuctions = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auction/filter/auctions`, {
+    const response = await fetch(`${BASE_URL}/auction/filter/auctions`, {
       next: { revalidate: 0 },
       body: JSON.stringify({ perPage: 16, started: false }),
       method: 'POST',

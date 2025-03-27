@@ -4,6 +4,7 @@ import { cookies } from 'next/headers'
 import { useTranslation } from '../../../i18n/index'
 import { PageWrapper } from '@/components/page-wrapper'
 import { RecommendationsRoot } from './root'
+import { BASE_URL } from '@/core/config'
 
 const getRecommendations = async () => {
   const loadedCookies = await cookies()
@@ -13,7 +14,7 @@ const getRecommendations = async () => {
   }
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auction-similarities`, {
+    const response = await fetch(`${BASE_URL}/auction-similarities`, {
       method: 'POST',
       body: JSON.stringify({ page: 0, perPage: 16 }),
       headers: {

@@ -4,6 +4,7 @@ import { cookies } from 'next/headers'
 import { useTranslation } from '../../../i18n/index'
 import { PageWrapper } from '@/components/page-wrapper'
 import { LastSeenAuctionsRoot } from './root'
+import { BASE_URL } from '@/core/config'
 
 const getLastSeenAuctions = async () => {
   const loadedCookies = await cookies()
@@ -13,7 +14,7 @@ const getLastSeenAuctions = async () => {
   }
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/lastSeen/0/16`, {
+    const response = await fetch(`${BASE_URL}/lastSeen/0/16`, {
       method: 'GET',
       headers: {
         'Cache-Control': 'no-store, max-age=0',

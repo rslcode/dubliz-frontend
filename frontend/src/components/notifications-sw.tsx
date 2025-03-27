@@ -4,6 +4,7 @@ import { AuthService } from '@/core/services/auth'
 import { AppStore } from '@/core/store'
 import { observer } from 'mobx-react-lite'
 import { useEffect, useRef } from 'react'
+import { BASE_URL } from '@/core/config'
 
 interface NotificationsSWProps {
   vapidPublicKey: string
@@ -38,7 +39,7 @@ export const NotificationsSW = observer((props: NotificationsSWProps) => {
             applicationServerKey: props.vapidPublicKey,
           })
 
-          await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/web-push-subscribe`, {
+          await fetch(`${BASE_URL}/web-push-subscribe`, {
             method: 'POST',
             body: JSON.stringify(subscription),
             headers: {

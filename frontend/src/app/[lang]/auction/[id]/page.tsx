@@ -5,6 +5,7 @@ import { PageWrapper } from '@/components/page-wrapper'
 import { AuctionDetailsRoot } from './root'
 import { cookies } from 'next/headers'
 import { SESSION_COOKIE_NAME } from '@/constants'
+import { BASE_URL } from '@/core/config'
 
 const loadAuctionDetails = async (auctionId?: string) => {
   if (!auctionId) {
@@ -15,7 +16,7 @@ const loadAuctionDetails = async (auctionId?: string) => {
   const session = loadedCookies.get(SESSION_COOKIE_NAME)?.value || null
 
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/auction/details/${auctionId}`,
+    `${BASE_URL}/auction/details/${auctionId}`,
     {
       method: 'GET',
       headers: {
@@ -45,7 +46,7 @@ export async function generateMetadata({
   const description = auction.description || auction.title
 
   const firstAsset = auction.assets?.[0]
-  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL
+  const serverUrl = BASE_URL
 
   const assetUrl = firstAsset ? `${serverUrl}/assets/${firstAsset.path}` : DefaultAssetImage.src
 

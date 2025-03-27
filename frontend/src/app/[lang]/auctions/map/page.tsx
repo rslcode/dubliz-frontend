@@ -4,10 +4,11 @@ import { SEO } from '@/constants'
 import { Metadata } from 'next'
 import { useTranslation } from '../../../i18n/index'
 import { Suspense } from 'react'
+import { BASE_URL } from '@/core/config'
 
 const getAuctionMapClusters = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auction-map`, {
+    const response = await fetch(`${BASE_URL}/auction-map`, {
       next: { revalidate: 0 },
       method: 'GET',
     })

@@ -7,14 +7,14 @@ import { CategoryIcon } from '@/components/common/category-icon'
 import Link from 'next/link'
 import { Icon } from '@/components/common/icon'
 import { Countdown } from '@/components/common/countdown'
-
+import { BASE_URL } from '@/core/config'
 export const AuctionClusteredMarkerDetails = (props: {
   points: PointFeature<GeoJsonProperties>[]
 }) => {
   const globalContext = useGlobalContext()
   const currentLanguage = globalContext.currentLanguage
 
-  const serverBaseURL = process.env.NEXT_PUBLIC_SERVER_URL
+  const serverBaseURL = BASE_URL
 
   const { defaultProductImageUrl } = globalContext.appSettings
 

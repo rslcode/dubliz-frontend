@@ -8,7 +8,7 @@ import { Navigation, Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import DefaultAssetImage from '@/../public/assets/img/default-item.jpeg'
 import useGlobalContext from '@/hooks/use-context'
-
+import { BASE_URL } from '@/core/config'
 export const AuctionDetailsAssets = (props: {
   auction: Auction
   handleOpenGallery?: () => void
@@ -21,7 +21,7 @@ export const AuctionDetailsAssets = (props: {
   const [currentActiveSlide, setCurrentActiveSlide] = useState(0)
 
   const renderOneAsset = (asset: Asset) => {
-    const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL
+    const serverUrl = BASE_URL
     const url = `${serverUrl}/assets/${asset.path}`
 
     return (

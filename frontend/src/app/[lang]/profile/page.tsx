@@ -5,6 +5,7 @@ import { notFound, redirect } from 'next/navigation'
 import { Metadata } from 'next'
 import { useTranslation } from '../../i18n/index'
 import { ProfileDetailsRoot } from './root'
+import { BASE_URL } from '@/core/config'
 
 const loadAccountDetails = async () => {
   const loadedCookies = await cookies()
@@ -14,7 +15,7 @@ const loadAccountDetails = async () => {
   }
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/account`, {
+    const response = await fetch(`${BASE_URL}/account`, {
       method: 'GET',
       headers: {
         'Cache-Control': 'no-store, max-age=0',
@@ -43,7 +44,7 @@ const loadAccountAuctions = async () => {
   }
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auction/all/account/all`, {
+    const response = await fetch(`${BASE_URL}/auction/all/account/all`, {
       method: 'POST',
       body: JSON.stringify({ perPage: 12 }),
       headers: {
@@ -74,7 +75,7 @@ const loadAccountBids = async () => {
   }
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auction/byBid/all`, {
+    const response = await fetch(`${BASE_URL}/auction/byBid/all`, {
       method: 'POST',
       body: JSON.stringify({ perPage: 12 }),
       headers: {
@@ -105,7 +106,7 @@ const loadAccountReviews = async () => {
   }
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/review/0/10`, {
+    const response = await fetch(`${BASE_URL}/review/0/10`, {
       method: 'GET',
       headers: {
         'Cache-Control': 'no-store, max-age=0',
@@ -140,7 +141,7 @@ export async function generateMetadata({
   const description = t('pageSEO.account_details_description')
 
   const firstAsset = account?.asset
-  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL
+  const serverUrl = BASE_URL
 
   const assetUrl = firstAsset ? `${serverUrl}/assets/${firstAsset.path}` : account?.picture
 

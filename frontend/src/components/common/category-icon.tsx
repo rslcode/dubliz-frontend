@@ -1,6 +1,7 @@
 import { Category } from '@/core/domain/category'
 import Image from 'next/image'
 import { Icon, ValidIconSize } from './icon'
+import { BASE_URL } from '@/core/config'
 
 export const CategoryIcon = (props: { category?: Category; size?: number }) => {
   const { category, size = 24 } = props
@@ -9,7 +10,7 @@ export const CategoryIcon = (props: { category?: Category; size?: number }) => {
   }
 
   if (category.asset) {
-    const serverURL = process.env.NEXT_PUBLIC_SERVER_URL
+    const serverURL = BASE_URL
     return (
       <Image
         alt="Category image"

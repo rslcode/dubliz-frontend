@@ -4,10 +4,11 @@ import { useTranslation } from '../../i18n/index'
 import { SEO } from '@/constants'
 import { AllAuctionsListRoot } from './root'
 import { Suspense } from 'react'
+import { BASE_URL } from '@/core/config'
 
 const getAllLocations = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/location/all`, {
+    const response = await fetch(`${BASE_URL}/location/all`, {
       next: { revalidate: 0 },
       method: 'GET',
     })
@@ -25,7 +26,7 @@ const getAllLocations = async () => {
 
 const countActiveAuctions = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auction/filter/count`, {
+    const response = await fetch(`${BASE_URL}/auction/filter/count`, {
       next: { revalidate: 0 },
       method: 'POST',
       body: JSON.stringify({ active: true }),

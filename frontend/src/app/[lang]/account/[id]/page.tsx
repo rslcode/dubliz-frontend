@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { PageWrapper } from '@/components/page-wrapper'
 import { useTranslation } from '../../../i18n/index'
 import { AccountDetailsRoot } from './root'
+import { BASE_URL } from '@/core/config'
 
 const loadAccountDetails = async (accountId?: string) => {
   if (!accountId) {
@@ -10,7 +11,7 @@ const loadAccountDetails = async (accountId?: string) => {
   }
 
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/account/details/${accountId}`,
+    `${BASE_URL}/account/details/${accountId}`,
     {
       method: 'GET',
       headers: {
@@ -41,7 +42,7 @@ export async function generateMetadata({
   const description = t('pageSEO.account_details_description')
 
   const firstAsset = account.asset
-  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL
+  const serverUrl = BASE_URL
 
   const assetUrl = firstAsset ? `${serverUrl}/assets/${firstAsset.path}` : account.picture
 

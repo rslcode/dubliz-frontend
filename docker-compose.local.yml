@@ -1,0 +1,29 @@
+version: "3.8"
+
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+    image: dubliz-frontend
+    container_name: dubliz.store-frontend
+    volumes:
+      - ./frontend:/frontend
+      - frontend_node_modules:/frontend/node_modules/
+    restart: unless-stopped
+    networks:
+      - base
+    ports:
+      - "8002:8002"
+    #    command: npm run dev
+    env_file:
+      - ./frontend/.env
+    environment:
+      DOMAIN: dubliz-frontend
+
+volumes:
+  frontend_node_modules:
+
+networks:
+  base:
+    name: base

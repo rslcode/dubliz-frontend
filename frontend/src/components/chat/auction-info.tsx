@@ -3,7 +3,7 @@ import useGlobalContext from '@/hooks/use-context'
 import Image from 'next/image'
 import DefaultAssetImage from '@/../public/assets/img/default-item.jpeg'
 import { useRouter } from 'next/navigation'
-
+import { BASE_URL } from '@/core/config'
 export const ChatAuctionInfo = (props: { auction: Auction }) => {
   const { auction } = props
   const globalContext = useGlobalContext()
@@ -27,7 +27,7 @@ export const ChatAuctionInfo = (props: { auction: Auction }) => {
 
   const renderAuctionAsset = () => {
     const assets = auction.assets
-    const serverBaseURL = process.env.NEXT_PUBLIC_SERVER_URL
+    const serverBaseURL = BASE_URL
 
     if (!assets?.length) {
       const { defaultProductImageUrl } = globalContext.appSettings

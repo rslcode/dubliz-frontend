@@ -2,10 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 import DefaultAssetImage from '@/../public/assets/img/default-item.jpeg'
 import useGlobalContext from '@/hooks/use-context'
+import { BASE_URL } from '@/core/config'
 
 export const AuctionMarkerAssets = (props: { isExtended?: boolean; path: string }) => {
   const { isExtended = false, path } = props
-  const serverBaseURL = process.env.NEXT_PUBLIC_SERVER_URL
+  const serverBaseURL = BASE_URL
   const globalContext = useGlobalContext()
   const { defaultProductImageUrl } = globalContext.appSettings
 

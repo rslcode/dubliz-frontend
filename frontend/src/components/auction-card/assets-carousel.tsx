@@ -4,11 +4,11 @@ import { Navigation, Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
 import { Icon } from '../common/icon'
-
+import { BASE_URL } from '@/core/config'
 export const AuctionCardAssetsCarousel = memo(
   (props: { assets: Asset[]; uniqueKey: string; auctionId: string }) => {
     const { assets, uniqueKey, auctionId } = props
-    const serverBaseURL = process.env.NEXT_PUBLIC_SERVER_URL
+    const serverBaseURL = BASE_URL
 
     const [swiper, setSwiper] = useState<SwiperClass | null>(null)
     const [currentActiveSlide, setCurrentActiveSlide] = useState(0)

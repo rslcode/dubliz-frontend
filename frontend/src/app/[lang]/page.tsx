@@ -11,10 +11,11 @@ import { AuctionsOnMapCard } from '@/components/home-page/auctions-on-map-card'
 import { PromotedAuctionsSection } from '@/components/home-page/promoted-auctions'
 import { LastSeenAuctionsSection } from '@/components/home-page/last-seen-auctions'
 import { StartingSoonAuctionsSection } from '@/components/home-page/starting-soon-auctions'
+import { BASE_URL } from '@/core/config'
 
 const getAuctions = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auction/latest`, {
+    const response = await fetch(`${BASE_URL}/auction/latest`, {
       next: { revalidate: 0 },
       method: 'GET',
     })
@@ -32,7 +33,7 @@ const getAuctions = async () => {
 
 const getPromotedAuctions = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auction/filter/auctions`, {
+    const response = await fetch(`${BASE_URL}/auction/filter/auctions`, {
       next: { revalidate: 100 },
       body: JSON.stringify({ promotedOnly: true, perPage: 6 }),
       method: 'POST',
@@ -54,7 +55,7 @@ const getPromotedAuctions = async () => {
 
 const countActiveAuctions = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auction/filter/count`, {
+    const response = await fetch(`${BASE_URL}/auction/filter/count`, {
       next: { revalidate: 0 },
       method: 'POST',
       body: JSON.stringify({ active: true }),
@@ -79,7 +80,7 @@ const getRecommendations = async () => {
   }
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auction-similarities`, {
+    const response = await fetch(`${BASE_URL}/auction-similarities`, {
       method: 'POST',
       body: JSON.stringify({ page: 0, perPage: 8 }),
       headers: {
@@ -109,7 +110,7 @@ const getStartingSoonAuctions = async () => {
   }
 
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/auction/filter/auctions`, {
+    const response = await fetch(`${BASE_URL}/auction/filter/auctions`, {
       method: 'POST',
       body: JSON.stringify({ perPage: 6, started: false }),
       headers: {

@@ -4,6 +4,7 @@ import DefaultAssetImage from '@/../public/assets/img/default-item.jpeg'
 import { PageWrapper } from '@/components/page-wrapper'
 import { useTranslation } from '@/app/i18n'
 import { AuctionForm } from '@/components/auction-form'
+import { BASE_URL } from '@/core/config'
 
 const loadAuctionDetails = async (auctionId?: string) => {
   if (!auctionId) {
@@ -11,7 +12,7 @@ const loadAuctionDetails = async (auctionId?: string) => {
   }
 
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/auction/details/${auctionId}`,
+    `${BASE_URL}/auction/details/${auctionId}`,
     {
       method: 'GET',
       headers: {
@@ -40,7 +41,7 @@ export async function generateMetadata({
   const description = auction.description || auction.title
 
   const firstAsset = auction.assets?.[0]
-  const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL
+  const serverUrl = BASE_URL
 
   const assetUrl = firstAsset ? `${serverUrl}/assets/${firstAsset.path}` : DefaultAssetImage.src
 

@@ -4,7 +4,7 @@ import { Icon } from '@/components/common/icon'
 import { Asset } from '@/core/domain/asset'
 import useGlobalContext from '@/hooks/use-context'
 import dynamic from 'next/dynamic'
-
+import { BASE_URL } from '@/core/config'
 const AssetsGallery = dynamic(() => import('@/components/common/assets-gallery'), {
   ssr: false,
   loading: () => (
@@ -25,7 +25,7 @@ export const AssetsGalleryModal = (props: {
   const { t } = useTranslation(currentLanguage)
 
   const { isOpened, setOpened, assets, title } = props
-  const serverBaseURL = process.env.NEXT_PUBLIC_SERVER_URL
+  const serverBaseURL = BASE_URL
 
   const assetsToDisplay = assets.map((asset) => ({
     url:

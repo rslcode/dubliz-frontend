@@ -5,6 +5,7 @@ import { Navigation, Scrollbar } from 'swiper/modules'
 import { useEffect, useState } from 'react'
 import { Asset } from '@/core/domain/asset'
 import { Icon } from '@/components/common/icon'
+import { BASE_URL } from '@/core/config'
 
 export const UploadedAssetsList = (props: {
   assets: File[] | Asset[] | (File | Asset)[]
@@ -71,7 +72,7 @@ export const UploadedAssetsList = (props: {
   }
 
   const renderAssetItem = (asset: File | Asset, index: number) => {
-    const serverBaseURL = process.env.NEXT_PUBLIC_SERVER_URL
+    const serverBaseURL = BASE_URL
 
     const url = asset.hasOwnProperty('id')
       ? `${serverBaseURL}/assets/${(asset as Asset).path}`

@@ -3,6 +3,7 @@ import { Auction } from './auction'
 import { Category } from './category'
 import { FilterItem } from './filter'
 import { Review } from './review'
+import { BASE_URL } from '@/core/config'
 
 export class Account {
   id: string
@@ -88,7 +89,6 @@ export class Account {
   static fromJSON(data: Record<string, unknown> = {}): Account {
     const asset = data.asset ? Asset.fromJSON(data.asset as Record<string, unknown>) : null
 
-    const BASE_URL = process.env.NEXT_PUBLIC_SERVER_URL ?? 'http://localhost:8000'
     const serverURL = BASE_URL
     let assetUrl = null
     if (asset) {

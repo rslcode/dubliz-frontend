@@ -20,6 +20,7 @@ import { v4 as uuidV4 } from 'uuid'
 import { dir } from 'i18next'
 import { AuctionPlayVideoButton } from './play-video-button'
 import { PriceText } from '../common/price-text'
+import { BASE_URL } from '@/core/config'
 
 export const AuctionCard = observer((props: { auction: Auction; fullWidth?: boolean }) => {
   const { auction, fullWidth = false } = props
@@ -60,7 +61,7 @@ export const AuctionCard = observer((props: { auction: Auction; fullWidth?: bool
 
   const renderAuctionAssets = () => {
     const assets = auction.assets
-    const serverBaseURL = process.env.NEXT_PUBLIC_SERVER_URL
+    const serverBaseURL = BASE_URL
 
     if (!assets?.length) {
       const { defaultProductImageUrl } = globalContext.appSettings
