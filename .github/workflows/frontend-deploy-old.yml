@@ -1,4 +1,4 @@
-name: Deploy frontend
+name: Deploy native frontend
 
 on:
   workflow_dispatch:
