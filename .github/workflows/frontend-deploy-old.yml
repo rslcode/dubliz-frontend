@@ -45,4 +45,4 @@ jobs:
           echo "Starting Deploy Frontend..."
 
           # Отправка собранной директории на сервер
-          rsync -avz --delete -e "ssh -i ssh_key" ./.next/ $SERVER_USER@$SERVER_IP:$DEPLOY_PATH
+          rsync -avz --delete -e "ssh -i ssh_key" .next/ $SERVER_USER@$SERVER_IP:$DEPLOY_PATH
