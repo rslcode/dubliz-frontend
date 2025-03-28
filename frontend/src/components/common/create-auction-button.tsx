@@ -8,53 +8,53 @@ import { useState } from 'react'
 import { EmailVerificationNeeded } from '../modals/email-verification-needed'
 
 export const CreateAuctionButton = observer(
-  (props: { height?: number; fullWidth?: boolean; handleClick?: () => void }) => {
-    const { height, fullWidth, handleClick } = props
-    const globalContext = useGlobalContext()
-    const currentLanguage = globalContext.currentLanguage
-    const appSettings = globalContext.appSettings
-    const { t } = useTranslation(currentLanguage)
+    (props: { height?: number; fullWidth?: boolean; handleClick?: () => void }) => {
+        const { height, fullWidth, handleClick } = props
+        const globalContext = useGlobalContext()
+        const currentLanguage = globalContext.currentLanguage
+        const appSettings = globalContext.appSettings
+        const { t } = useTranslation(currentLanguage)
 
-    const [isEmailVerificationNeeded, setIsEmailVerificationNeeded] = useState(false)
+        const [isEmailVerificationNeeded, setIsEmailVerificationNeeded] = useState(false)
 
-    const router = useRouter()
+        const router = useRouter()
 
-    const toggleEmailVerificationNeeded = () => {
-      setIsEmailVerificationNeeded(!isEmailVerificationNeeded)
+        const toggleEmailVerificationNeeded = () => {
+            setIsEmailVerificationNeeded(!isEmailVerificationNeeded)
+        }
+
+        const handleButtonClick = async () => {
+            if (!AppStore.accountData?.id) {
+                router.push('/auth/login')
+                return
+            }
+
+            handleClick?.()
+            const allowUnvalidatedUsersToCreateAuctions = appSettings.allowUnvalidatedUsersToCreateAuctions
+            const emailIsVerified = await AuthService.userHasEmailVerified(appSettings)
+            if (!allowUnvalidatedUsersToCreateAuctions && !emailIsVerified && !AuthService.userHasPhoneNumber()) {
+                toggleEmailVerificationNeeded()
+                return
+            }
+
+            router.push('/auction-create')
+        }
+
+        return (
+            <>
+                <button
+                    onClick={handleButtonClick}
+                    className={`fill-btn create-auction-btn ${fullWidth ? 'w-100' : ''}`}
+                    style={{ ...(height ? { height } : {}) }}
+                >
+                    <span> {t('create_auction.create_auction')}</span>
+                </button>
+                <EmailVerificationNeeded
+                    isOpened={isEmailVerificationNeeded}
+                    close={toggleEmailVerificationNeeded}
+                    onValidated={handleButtonClick}
+                />
+            </>
+        )
     }
-
-    const handleButtonClick = async () => {
-      if (!AppStore.accountData?.id) {
-        router.push('/auth/login')
-        return
-      }
-
-      handleClick?.()
-      const allowUnvalidatedUsersToCreateAuctions = appSettings.allowUnvalidatedUsersToCreateAuctions
-      const emailIsVerified = await AuthService.userHasEmailVerified(appSettings)
-      if (!allowUnvalidatedUsersToCreateAuctions && !emailIsVerified && !AuthService.userHasPhoneNumber()) {
-        toggleEmailVerificationNeeded()
-        return
-      }
-
-      router.push('/auction-create')
-    }
-
-    return (
-      <>
-        <button
-          onClick={handleButtonClick}
-          className={`fill-btn create-auction-btn ${fullWidth ? 'w-100' : ''}`}
-          style={{ ...(height ? { height } : {}) }}
-        >
-          <span> {t('create_auction.create_auction')}</span>
-        </button>
-        <EmailVerificationNeeded
-          isOpened={isEmailVerificationNeeded}
-          close={toggleEmailVerificationNeeded}
-          onValidated={handleButtonClick}
-        />
-      </>
-    )
-  }
 )

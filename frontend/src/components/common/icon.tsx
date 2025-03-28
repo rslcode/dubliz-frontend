@@ -1,37 +1,38 @@
 export type ValidIconSize =
-  | 140
-  | 128
-  | 100
-  | 96
-  | 80
-  | 76
-  | 70
-  | 68
-  | 64
-  | 48
-  | 42
-  | 40
-  | 36
-  | 34
-  | 32
-  | 30
-  | 28
-  | 24
-  | 20
-  | 18
-  | 16
-  | 14
-  | 12
-  | 8
-  | 6
-  | 4
-  | 'auto'
+    | 140
+    | 128
+    | 100
+    | 96
+    | 80
+    | 76
+    | 70
+    | 68
+    | 64
+    | 48
+    | 42
+    | 40
+    | 36
+    | 34
+    | 32
+    | 30
+    | 28
+    | 24
+    | 20
+    | 18
+    | 16
+    | 14
+    | 12
+    | 8
+    | 6
+    | 4
+    | 'auto'
 
 interface IconProps {
   type: string
   size?: ValidIconSize
   rotate?: number
   color?: string
+  className?: string
 }
 
 const ErrorComp = () => {
@@ -39,7 +40,7 @@ const ErrorComp = () => {
 }
 
 export const Icon = (params: IconProps) => {
-  const { type, size = 24, rotate, color = 'currentColor' } = params
+  const { type, size = 24, rotate, color = 'currentColor', className } = params
 
   let Svg
   try {
@@ -59,8 +60,8 @@ export const Icon = (params: IconProps) => {
   }
 
   return (
-    <div className="icon" style={style as React.CSSProperties}>
-      <Svg />
-    </div>
+      <div className={`${className} icon`} style={style as React.CSSProperties}>
+        <Svg />
+      </div>
   )
 }

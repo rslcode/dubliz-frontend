@@ -202,7 +202,17 @@
     "all_around_the_world": "All around the world",
     "see_my_profile": "See my profile",
     "my_auctions": "My auctions",
-    "my_bids": "My bids"
+    "my_bids": "My bids",
+
+    "language": "Language",
+    "currency": "Currency",
+    "mode": "Mode",
+    "back": "Back",
+    "about_us": "About us",
+    "home": "Home",
+    "favourite": "Favourite",
+    "add": "Add",
+    "message": "Message"
   },
   "footer": {
     "follow_us": "Follow us on",

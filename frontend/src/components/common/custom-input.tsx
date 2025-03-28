@@ -50,55 +50,56 @@ export const CustomInput = (props: {
     onChange?.(e.target.value)
   }
 
-  const handleClear = () => {
-    setValue('')
-    onChange?.('')
-  }
+  // const handleClear = () => {
+  //   setValue('')
+  //   onChange?.('')
+  // }
 
   return (
-    <div className="filter-search-input m-0">
-      <div className="input-container">
-        <input
-          {...inputAttrs}
-          disabled={disabled}
-          onChange={handleChange}
-          onKeyDown={(e) => {
-            if (props.onEnter && e.key === 'Enter') {
-              props.onEnter()
-              setValue('')
-            }
-          }}
-          type={type}
-          style={{ ...style, ...(largeHeight ? { height: 50 } : {}) }}
-          value={value}
-          className={`search-input ${secondary ? 'secondary-input-background' : ''}`}
-          placeholder={placeholder ?? 'Search...'}
-        />
-        {prefixIcon && <div className="search-icon">{prefixIcon}</div>}
-        {withPrefixIcon && !prefixIcon ? (
-          <div className="search-icon d-flex align-items-center justify-content-center">
-            <Icon type="generic/search" />
-          </div>
-        ) : null}
+      <div className="filter-search-input m-0">
+        <div className="input-container">
+          <input
+              {...inputAttrs}
+              disabled={disabled}
+              onChange={handleChange}
+              onKeyDown={(e) => {
+                if (props.onEnter && e.key === 'Enter') {
+                  props.onEnter()
+                  setValue('')
+                }
+              }}
+              type={type}
+              style={{ ...style, ...(largeHeight ? { height: 50 } : {}) }}
+              value={value}
+              className={`search-input ${secondary ? 'secondary-input-background' : ''}`}
+              placeholder={placeholder ?? 'Search...'}
+          />
+          {prefixIcon && <div className="search-icon">{prefixIcon}</div>}
 
-        {!!suffixIcon && (
-          <div style={{ top: 12, position: 'absolute', right: 16 }}>{suffixIcon}</div>
-        )}
+          {withPrefixIcon && !prefixIcon ? (
+              <div className="search-icon d-flex align-items-center justify-content-center">
+                <Icon type="generic/search" />
+              </div>
+          ) : null}
 
-        {isLoading && withSufixIcon ? (
-          <div className="loading-icon">
-            <div className="d-flex justify-content-center">
-              <Icon type="loading" color={'var(--font_1)'} size={40} />
-            </div>
-          </div>
-        ) : null}
+          {!!suffixIcon && (
+              <div style={{ top: 12, position: 'absolute', right: 16 }}>{suffixIcon}</div>
+          )}
 
-        {!isLoading && withSufixIcon && value.length ? (
-          <div className="input-icon" onClick={handleClear}>
-            <Icon type="generic/close-filled" size={18} />
-          </div>
-        ) : null}
+          {isLoading && withSufixIcon ? (
+              <div className="loading-icon">
+                <div className="d-flex justify-content-center">
+                  <Icon type="loading" color={'var(--font_1)'} size={40} />
+                </div>
+              </div>
+          ) : null}
+
+          {/*{!isLoading && withSufixIcon && value.length ? (*/}
+          {/*  <div className="input-icon" onClick={handleClear}>*/}
+          {/*    <Icon type="generic/close-filled" size={18} />*/}
+          {/*  </div>*/}
+          {/*) : null}*/}
+        </div>
       </div>
-    </div>
   )
 }

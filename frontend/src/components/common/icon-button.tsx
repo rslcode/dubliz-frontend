@@ -17,7 +17,7 @@ export const IconButton = (
     icon,
     onClick,
     size = 24,
-    transparent = false,
+    // transparent = false,
     noMargin = false,
     color,
     countInfo,
@@ -30,7 +30,7 @@ export const IconButton = (
       {...rest}
       aria-label="icon-button"
       className={`icon-button position-relative ${noMargin ? '' : 'ml-20'}`}
-      style={{ background: transparent ? 'transparent' : 'var(--background_4)', ...style }}
+      style={style}
       onClick={(ev) => onClick(ev)}
     >
       <div className="d-flex justify-content-center align-items-center">

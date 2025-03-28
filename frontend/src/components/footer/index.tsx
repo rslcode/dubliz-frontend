@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import useGlobalContext from '@/hooks/use-context'
 import { useTranslation } from '@/app/i18n/client'
-import { ChangeLanguageButton } from './change-lang-button'
-import ThemeChanger from './change-theme-button'
+// import { ChangeLanguageButton } from './change-lang-button'
+// import ThemeChanger from './change-theme-button'
 import { TUTORIAL_LINKS } from '@/constants'
 import { DownloadAppButtons } from './download-app-buttons'
 import { AppLogo } from '../common/app-logo'
@@ -29,10 +29,10 @@ export const Footer = () => {
                   <AppLogo />
                 </div>
                 <span>{t('footer.about_motto')}</span>
-                <div className="mb-10 d-flex align-items-center gap-2 mt-10">
-                  <ChangeLanguageButton />
-                  <ThemeChanger />
-                </div>
+                {/*<div className="mb-10 d-flex align-items-center gap-2 mt-10">*/}
+                {/*  <ChangeLanguageButton />*/}
+                {/*  <ThemeChanger />*/}
+                {/*</div>*/}
                 <div>
                   <ChangeCurrencyButton />
                 </div>

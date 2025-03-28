@@ -1,4 +1,5 @@
 @use './abstract' as *;
+
 .filter-search-input {
   flex: 1;
 
@@ -8,9 +9,8 @@
     border: 1px solid var(--separator);
     background: var(--background_1);
     border-radius: 6px;
-    padding: 0 20px;
     outline: none;
-    padding-right: 50px;
+    padding-left: 10px;
   }
 
   input:focus {
@@ -43,6 +43,7 @@
   box-shadow: none;
   width: 100%;
 }
+
 .right-icon-root {
   position: absolute;
   right: 16px;
@@ -52,6 +53,7 @@
   align-items: center;
   justify-content: center;
 }
+
 html[dir='rtl'] .right-icon-root {
   left: 16px;
   right: auto;
@@ -66,6 +68,7 @@ html[dir='rtl'] .right-icon-root {
   align-items: center;
   justify-content: center;
 }
+
 html[dir='rtl'] .search-icon-root {
   right: 16px;
   left: auto;
@@ -87,41 +90,50 @@ html[dir='rtl'] .search-icon-root {
   overflow-y: auto;
   box-shadow: 10px 30px 20px rgba(37, 52, 103, 0.1);
 }
+
 .show-element .global-search-menu {
   display: block;
 }
+
 .input-container {
   position: relative;
 }
+
 .input-container > input {
-  padding-left: 58px !important;
-  padding-right: 58px !important;
+  //padding-left: 58px !important;
+  //padding-right: 58px !important;
 }
+
 .secondary-input-background {
   background: var(--background_4) !important;
 }
+
 .search-icon {
   position: absolute;
-  left: 24px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 html[dir='rtl'] .search-icon {
   right: 24px;
   left: auto;
 }
+
 .search-icon > i {
   font-weight: 400;
 }
+
 .loading-icon {
   position: absolute;
   right: 24px;
   top: 50%;
   transform: translateY(-50%);
 }
+
 .input-icon {
   position: absolute;
   right: 24px;
@@ -139,17 +151,16 @@ html[dir='rtl'] .input-icon {
 }
 
 .search-input {
-  @media #{$md, $sm, $xs} {
-    border-radius: 6px !important;
-	}
-}
-
-.search-input:focus {
+  background: transparent !important;
+  border-radius: 12px !important;
   border-color: var(--font_2) !important;
 }
 
+.search-input:focus {
+}
+
 .global-input-search-button {
-  height: 100% ;
+  height: 100%;
   width: 100%;
   border-radius: 0 10px 10px 0;
 }
@@ -165,6 +176,7 @@ html[dir='rtl'] .input-icon {
   border-radius: 6px;
   cursor: pointer;
 }
+
 .global-search-item-root:hover {
   background-color: var(--background_2);
 }

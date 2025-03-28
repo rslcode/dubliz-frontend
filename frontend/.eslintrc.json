@@ -1,6 +1,11 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"],
+  "extends": ["next/core-web-vitals", "next/typescript", "eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "rules": {
-    "@typescript-eslint/no-unsafe-function-type": "warn"
-  }
+    "@typescript-eslint/no-unsafe-function-type": "warn",
+    "no-console": "warn",
+    "react/jsx-key": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "react/react-in-jsx-scope": "off"
+  },
+  "plugins": ["@typescript-eslint", "react"]
 }

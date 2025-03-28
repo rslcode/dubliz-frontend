@@ -24,7 +24,7 @@
 }
 
 #header-sticky.hidden {
-  transform: translateY(-100%); 
+  transform: translateY(-100%);
   opacity: 0;
 }
 
@@ -47,10 +47,17 @@
   padding-left: 8px !important;
   padding-right: 8px !important;
 }
+
 .header-root > div {
   display: flex;
   align-items: center;
   height: 100%;
+}
+
+.sm-none {
+  @media (max-width: 600px) {
+    display: none !important
+  }
 }
 
 .favourites-button {
@@ -71,32 +78,50 @@
 }
 
 .header-content {
-	justify-content: end;
+  justify-content: end;
 
-	@media (max-width: 768px) {
-		justify-content: flex-end;
-	}
+  @media (max-width: 768px) {
+    justify-content: flex-end;
+  }
 }
 
 .menu-action-buttons {
-	display: flex;
+  display: flex;
 
   @media #{$sm,$xs} {
-		display: none !important;
-	}
+    display: none !important;
+  }
 }
 
 .profile-btn {
   height: 45px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 0 16px;
+  justify-content: space-between;
+  padding: 0 15px 0 5px;
   white-space: nowrap;
   background: var(--background_4);
-  border: 1px solid transparent;
-  gap: 8px;
-  min-width: 130px;
+  gap: 17px;
+  border: 1px solid var(--font_3);
+  border-radius: 16px;
+  min-width: 95px;
+
+  &:hover {
+    border: 1px solid var(--font_3);
+  }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  span {
+    background-color: var(--font_3);
+    display: block;
+    width: 18px;
+    height: 2px;
+  }
 }
 
 .profile-btn > .placeholder-icon {
@@ -108,40 +133,40 @@
 }
 
 .side-info-close {
-	background: none;
-	border: 0;
-	color: #fff;
-	font-size: 20px;
-	padding: 0;
-	-webkit-transition: all 0.5s ease-out 0s;
-	-moz-transition: all 0.5s ease-out 0s;
-	-ms-transition: all 0.5s ease-out 0s;
-	-o-transition: all 0.5s ease-out 0s;
-	transition: all 0.5s ease-out 0s;
+  background: none;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  padding: 0;
+  -webkit-transition: all 0.5s ease-out 0s;
+  -moz-transition: all 0.5s ease-out 0s;
+  -ms-transition: all 0.5s ease-out 0s;
+  -o-transition: all 0.5s ease-out 0s;
+  transition: all 0.5s ease-out 0s;
 }
 
 .side-info {
-	background: var(--background_1);
-	height: 100vh;
-	position: fixed;
-	z-index: 99999;
-	right: -100%;
-	top: 0;
-	min-width: 365px;
-	padding: 16px;
-	transition: 0.6s;
-	overflow-y: auto;
+  background: var(--background_1);
+  height: 100vh;
+  position: fixed;
+  z-index: 99999;
+  right: -100%;
+  top: 0;
+  min-width: 365px;
+  padding: 16px;
+  transition: 0.6s;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-	@media #{$lg,$md,$sm,$xs} {
-		width: 450px;
-	}
+  @media #{$lg,$md,$sm,$xs} {
+    width: 450px;
+  }
 
-	@media #{$sm,$xs} {
-		width: 100%;
-	}
+  @media #{$sm,$xs} {
+    width: 100%;
+  }
 }
 
 html[dir='rtl'] .side-info {
@@ -150,7 +175,7 @@ html[dir='rtl'] .side-info {
 }
 
 .side-info.info-open {
-	right: 0;
+  right: 0;
   border-left: 1px solid var(--separator);
 }
 
@@ -179,38 +204,38 @@ html[dir='rtl'] .menu-bar {
 }
 
 .bar-icon {
-	width: 20px;
-	height: 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	overflow: hidden;
+  width: 20px;
+  height: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .bar-icon span {
-	width: 100%;
-	height: 2px;
-	background: var(--font_1);
-	display: inline-block;
+  width: 100%;
+  height: 2px;
+  background: var(--font_1);
+  display: inline-block;
 }
 
 .bar-icon span:nth-child(2) {
-	margin-left: 40%;
-	transition: 0.3s;
+  margin-left: 40%;
+  transition: 0.3s;
 }
 
 .bar-icon:hover span:nth-child(2) {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 .bar-icon.left-bar-icon span:nth-child(2) {
-	margin-left: 0;
-	transition: 0.3s;
-	width: 60%;
+  margin-left: 0;
+  transition: 0.3s;
+  width: 60%;
 }
 
 .bar-icon.left-bar-icon:hover span:nth-child(2) {
-	width: 100%;
+  width: 100%;
 }
 
 .mobile-menu-item {
@@ -222,6 +247,6 @@ html[dir='rtl'] .menu-bar {
 
   &:hover {
     cursor: pointer;
-    background: var(--background_2);
+    //background: var(--background_2);
   }
 }
