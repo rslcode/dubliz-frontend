@@ -58,14 +58,14 @@ export const CategoriesSection = observer(
 
         const items = categoriesRef.current.querySelectorAll('.home-page-category-card')
         items.forEach((item) => {
-          ;(item as HTMLElement).style.height = '180px'
+          (item as HTMLElement).style.height = '180px'
         })
 
         const tallest = Math.max(
           ...Array.from(items).map((item) => (item as HTMLElement).offsetHeight)
         )
         items.forEach((item) => {
-          ;(item as HTMLElement).style.height = `${tallest}px`
+          (item as HTMLElement).style.height = `${tallest}px`
         })
 
         setMaxHeightOfCategories(tallest)
@@ -103,15 +103,14 @@ export const CategoriesSection = observer(
       >
         <div className="d-flex align-items-center justify-content-between section-header">
           <h1 className="text-4xl font-bold text-center m-0">{t('home.categories.categories')}</h1>
-          {!!currentAccount?.id ? (
-            <button
-              className={`${!screenIsBig ? 'border-btn' : 'hidden-border-btn'} mr-5`}
-              onClick={toggleCategoriesPreferences}
-            >
-              <span>{t('info.manage_preferences')}</span>
-            </button>
+          {currentAccount?.id ? (
+              <button className={'border-btn hidden-border-btn mr-5'}
+                  onClick={toggleCategoriesPreferences}
+              >
+                  <span>{t('info.manage_preferences')}</span>
+              </button>
           ) : (
-            <Link href="/auth/login">
+              <Link href="/auth/login">
               <button
                 className={`${!screenIsBig ? 'border-btn' : 'hidden-border-btn'} mr-5`}
                 aria-label={t('info.manage_preferences')}

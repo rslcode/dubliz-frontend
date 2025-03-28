@@ -93,8 +93,8 @@ export const Header = ({mobileMenuOpened, setMobileMenuOpened}: any) => {
               <div className="d-block d-sm-none w-100 mt-20 d-flex">
                 <GlobalSearchInput/>
                 <span style={{marginRight: -10}}>
-                                <NotificationsButton/>
-                            </span>
+                  <NotificationsButton/>
+                </span>
               </div>
             </div>
           </div>

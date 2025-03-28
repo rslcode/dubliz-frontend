@@ -215,7 +215,7 @@ export const MobileMenu = observer(
                                                     onClick={() => setShowLanguageMenu(true)}>
                                                     <div className="w-100 account-menu-link d-flex">
                                                         <div className="d-flex align-items-center gap-2">
-                                                            <Icon type="header/bid"/>
+                                                            <Icon type="header/language"/>
                                                             <span>{t('header.language')}</span>
                                                         </div>
                                                     </div>
@@ -224,7 +224,7 @@ export const MobileMenu = observer(
                                                     <Link onClick={() => handleClose()} href={`#`}
                                                           className="w-100 account-menu-link">
                                                         <div className="d-flex align-items-center gap-2">
-                                                            <Icon type="header/bid"/>
+                                                            <Icon type="header/currency"/>
                                                             <span>{t('header.currency')}</span>
                                                         </div>
                                                     </Link>
@@ -233,7 +233,7 @@ export const MobileMenu = observer(
                                                     <Link onClick={() => handleClose()} href={`#`}
                                                           className="w-100 account-menu-link">
                                                         <div className="d-flex align-items-center gap-2">
-                                                            <Icon type="header/bid"/>
+                                                            <Icon type="header/about"/>
                                                             <span>{t('header.about_us')}</span>
                                                         </div>
                                                     </Link>
@@ -243,7 +243,7 @@ export const MobileMenu = observer(
                                                         <div
                                                             className="d-flex align-items-center gap-2 justify-content-between">
                                                             <div className="d-flex align-items-center gap-2">
-                                                                <Icon type="header/bid"/>
+                                                                <Icon type="header/mode"/>
                                                                 <span>{t('header.mode')}</span>
                                                             </div>
                                                             <ThemeChanger/>

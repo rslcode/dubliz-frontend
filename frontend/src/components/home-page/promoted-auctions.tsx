@@ -26,7 +26,7 @@ export const PromotedAuctionsSection = observer(
         <div className="d-flex align-items-center section-header justify-content-between w-100">
           <h1 className="text-4xl font-bold text-center m-0">{t('generic.promoted_auctions')}</h1>
           <Link href="/auctions/promoted">
-            <button className={`${!screenIsBig ? 'border-btn' : 'hidden-border-btn'} mr-5`}>
+            <button className={'border-btn hidden-border-btn mr-5'}>
               <span>{t('generic.see_all')}</span>
             </button>
           </Link>

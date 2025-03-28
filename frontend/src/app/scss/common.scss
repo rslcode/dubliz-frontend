@@ -220,7 +220,7 @@ input[type="checkbox"] {
 
 .border-btn {
   height: 45px;
-  border: 1px solid var(--font_2);
+  border: 1px solid var(--call_to_action);
   padding: 0 30px;
   border-radius: 6px;
   display: flex;
@@ -228,11 +228,11 @@ input[type="checkbox"] {
   justify-content: center;
   font-size: 16px;
   font-weight: 500;
-  color: var(--font_2);
+  color: var(--call_to_action);
   white-space: nowrap;
 
   &:hover {
-    border-color: var(--font_3);
+    border-color: var(--call_to_action);
   }
 
   i {
@@ -282,6 +282,11 @@ input[type="checkbox"] {
   width: 100%;
   max-width: var(--maxWidth);
   align-items: center;
+
+  h1 {
+    color: var(--font_2) !important;
+    font-weight: normal;
+  }
 }
 
 .create-auction-btn {

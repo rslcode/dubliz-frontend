@@ -14,7 +14,7 @@
 }
 
 .icon svg:not([class*='stroke']) {
-  fill: var(--color) !important;
+  /*fill: var(--color) !important;*/
 }
 
 .icon.error svg:not([class*='stroke']) {
