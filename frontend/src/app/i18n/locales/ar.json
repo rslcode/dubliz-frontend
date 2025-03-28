@@ -202,7 +202,17 @@
     "all_around_the_world": "حول العالم",
     "see_my_profile": "عرض ملفي الشخصي",
     "my_auctions": "مزاداتي",
-    "my_bids": "عروضي"
+    "my_bids": "عروضي",
+    "language": "اللغة",
+    "currency": "العملة",
+    "mode": "الوضع",
+    "back": "رجوع",
+    "about_us": "معلومات عنا",
+    "home": "الصفحة الرئيسية",
+    "favourite": "المفضلة",
+    "add": "إضافة",
+    "message": "رسالة"
+
   },
   "footer": {
     "follow_us": "تابعنا على",

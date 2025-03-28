@@ -196,7 +196,16 @@
     "all_around_the_world": "Weltweit",
     "see_my_profile": "Mein Profil ansehen",
     "my_auctions": "Meine Auktionen",
-    "my_bids": "Meine Gebote"
+    "my_bids": "Meine Gebote",
+    "language": "Sprache",
+    "currency": "Währung",
+    "mode": "Modus",
+    "back": "Zurück",
+    "about_us": "Über uns",
+    "home": "Startseite",
+    "favourite": "Favoriten",
+    "add": "Hinzufügen",
+    "message": "Nachricht"
   },
   "footer": {
     "follow_us": "Folgen Sie uns auf",

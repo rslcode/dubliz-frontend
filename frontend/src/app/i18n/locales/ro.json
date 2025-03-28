@@ -196,7 +196,16 @@
     "all_around_the_world": "În întreaga lume",
     "see_my_profile": "Vezi profilul meu",
     "my_auctions": "Licitațiile mele",
-    "my_bids": "Ofertele mele"
+    "my_bids": "Ofertele mele",
+    "language": "Limbă",
+    "currency": "Monedă",
+    "mode": "Mod",
+    "back": "Înapoi",
+    "about_us": "Despre noi",
+    "home": "Acasă",
+    "favourite": "Favorite",
+    "add": "Adaugă",
+    "message": "Mesaj"
   },
   "footer": {
     "follow_us": "Urmărește-ne pe",

@@ -196,7 +196,16 @@
     "all_around_the_world": "世界中で",
     "see_my_profile": "私のプロフィールを見る",
     "my_auctions": "私のオークション",
-    "my_bids": "私の入札"
+    "my_bids": "私の入札",
+    "language": "言語",
+    "currency": "通貨",
+    "mode": "モード",
+    "back": "戻る",
+    "about_us": "私たちについて",
+    "home": "ホーム",
+    "favourite": "お気に入り",
+    "add": "追加",
+    "message": "メッセージ"
   },
   "footer": {
     "follow_us": "フォローする",
