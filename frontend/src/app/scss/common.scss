@@ -87,6 +87,7 @@ input[type="checkbox"] {
 
 .single-input-unit {
   position: relative;
+
   label {
     font-size: 16px;
     font-weight: 700;
@@ -139,6 +140,7 @@ input[type="checkbox"] {
 
   &:hover {
     color: var(--font_1);
+
     i {
       padding-left: 10px;
     }
@@ -152,6 +154,7 @@ input[type="checkbox"] {
 .secondary-color {
   color: var(--font_3) !important;
 }
+
 .primary-color {
   color: var(--font_1) !important;
 }
@@ -244,7 +247,7 @@ input[type="checkbox"] {
   color: var(--font_3);
 }
 
-.buy_coins_description{
+.buy_coins_description {
   color: var(--font_3);
   line-height: 18px;
 }
@@ -325,6 +328,7 @@ input[type="checkbox"] {
   padding-top: 2px;
   color: white;
 }
+
 .icon-button {
   display: flex;
   height: 45px;
@@ -367,15 +371,14 @@ input[type="checkbox"] {
 }
 
 .category-card-root {
-  border: 1px solid transparent;
-  border-radius: 6px;
+  border-radius: 100%;
   border: 1px solid transparent;
   background: var(--background_4);
   flex-direction: column;
   padding: 16px;
-  min-height: 160px;
+  width: 80px;
   gap: 16px;
-  box-shadow: 1px 1px 3px rgba(37,52,103,.11);
+  box-shadow: 1px 1px 3px rgba(37, 52, 103, .11);
 }
 
 .category-card-title {
@@ -386,6 +389,7 @@ input[type="checkbox"] {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .choose-preferred-category-btn {
   border-color: var(--separator);
 
@@ -648,7 +652,7 @@ input[type="checkbox"] {
   border-radius: 6px;
   padding: 8px 0;
   border: 1px solid var(--separator);
-  box-shadow: 5px 30px 20px rgba(37,52,103,.11);
+  box-shadow: 5px 30px 20px rgba(37, 52, 103, .11);
   z-index: 2;
   white-space: nowrap;
 }
@@ -683,7 +687,7 @@ html[dir='rtl'] .button-menu-content {
 }
 
 .nav::-webkit-scrollbar {
-  display: none; /* Hide scrollbar on WebKit browsers */
+  display: none;
 }
 
 .share-items-root {
@@ -705,6 +709,7 @@ html[dir='rtl'] .button-menu-content {
     min-width: 350px;
   }
 }
+
 .share-item:hover {
   background: var(--background_4);
 }
@@ -733,7 +738,7 @@ html[dir='rtl'] .react-responsive-modal-closeButton {
   height: 10px;
   border-radius: 50%;
   border: 1px solid var(--font_3);
-  box-shadow: 10px 30px 20px rgba(37,52,103,.11);
+  box-shadow: 10px 30px 20px rgba(37, 52, 103, .11);
 
   &.logged-in-account {
     background: var(--success);
@@ -742,4 +747,13 @@ html[dir='rtl'] .react-responsive-modal-closeButton {
   &.logged-out-account {
     background: var(--call_to_action);
   }
+}
+
+.action-card {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
