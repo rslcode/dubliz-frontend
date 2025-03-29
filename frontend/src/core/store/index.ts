@@ -9,16 +9,7 @@ import { BiddoNotification } from '../domain/notification'
 import { runInAction } from 'mobx'
 
 class AppStore {
-  // accountData = null as Account | null
-  accountData = {
-    picture: 'https://johannesippen.com/img/blog/humans-not-users/header.jpg',
-    email: 'john.doe@example.com',
-    verified: true,
-    coins: 150,
-    name: 'John Doe',
-    id: '1234565432345676543sxcdvgbuhguvft7',
-  } as Account | null
-
+  accountData = null as Account | null
   preferences = {
     preferredCategories: [] as Category[],
   }
