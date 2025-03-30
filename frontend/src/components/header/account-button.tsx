@@ -111,7 +111,7 @@ export const HeaderAccountButton = observer((props: { handleBuyCoins: () => void
         return (
             <div>
                 <Link href="/auth/login">
-                    <button className="btn border-btn profile-btn" aria-label={t('header.profile')}>
+                    <button className="profile-btn" aria-label={t('header.profile')}>
                         <div className="placeholder-icon">
                             <Icon type={'header/profile'} size={24}/>
                         </div>

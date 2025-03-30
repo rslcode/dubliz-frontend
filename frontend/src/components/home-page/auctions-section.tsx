@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { AppStore } from '@/core/store'
 import { Auction } from '@/core/domain/auction'
 import { observer } from 'mobx-react-lite'
-import { useScreenIsBig } from '@/hooks/use-screen-is-big'
+// import { useScreenIsBig } from '@/hooks/use-screen-is-big'
 
 export const AuctionsSection = observer(
   (props: { auctions: Record<string, unknown>[]; activeAuctionsCount: number }) => {
