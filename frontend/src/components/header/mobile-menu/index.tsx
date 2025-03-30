@@ -107,7 +107,7 @@ export const MobileMenu = observer(
                                 <div className="position-relative" style={{zIndex: 9999}}>
                                     {showLanguageMenu ? (
                                         <ul>
-                                            <li className="" onClick={() => setShowLanguageMenu(false)}>
+                                            <li onClick={() => setShowLanguageMenu(false)}>
                                                 <div className="w-100 d-flex">
                                                     <div className="d-flex align-items-center gap-2 mb-2">
                                                         <Icon type="arrows/arrow-left" size={24}/>
