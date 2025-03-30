@@ -27,7 +27,10 @@ export DOMAIN_NAME='${DOMAIN_NAME}' && \
 export MONGO_URI='${MONGO_URI}' && \
 export NEXT_PUBLIC_FRONT_END_ENV='${NODE_ENV}' && \
 export NEXT_PUBLIC_PROTOCOL='https' && \
-export NEXT_PUBLIC_SERVER_URL='${NEXT_PUBLIC_SERVER_URL}' && \
+export ADMIN_ENABLED='${ADMIN_ENABLED}' && \
+export ADMIN_EMAIL='${ADMIN_EMAIL}' && \
+export ADMIN_PASSWORD='${ADMIN_PASSWORD}' && \
+export ADMIN_COOKIE_PASSWORD='${ADMIN_COOKIE_PASSWORD}' && \
 gcloud auth configure-docker '${LOCATION}-docker.pkg.dev' --quiet && \
 docker pull '${LOCATION}-docker.pkg.dev/${PROJECT_NAME}/frontend/${DOMAIN_NAME}-frontend:latest' && \
 NODE_ENV='${NODE_ENV}' \

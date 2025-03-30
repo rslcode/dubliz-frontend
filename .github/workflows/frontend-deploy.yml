@@ -26,6 +26,10 @@ env:
   JWT_SECRET:  ${{ secrets.JWT_SECRET }}
   STORAGE_KEY: ${{ secrets.STORAGE_KEY }}
   LOCATION: ${{ secrets.LOCATION }}
+  ADMIN_ENABLED: "true"
+  ADMIN_EMAIL:  ${{ secrets.EMAIL }}
+  ADMIN_PASSWORD: "123123123"
+  ADMIN_COOKIE_PASSWORD: "123123123"
   NEXT_PUBLIC_SERVER_URL: 'http://dubliz.store/'
 
 jobs:
