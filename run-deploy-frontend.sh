@@ -16,7 +16,6 @@ LOCATION="${LOCATION}" \
 DOMAIN_NAME="${DOMAIN_NAME}" \
 MONGO_URI="${MONGO_URI}" \
 PROJECT_NAME="${PROJECT_NAME}" \
-NEXT_PUBLIC_SERVER_URL="${NEXT_PUBLIC_SERVER_URL}" \
 sh ./deploy-frontend.sh
 
 ssh -i ssh_key "${SERVER_USER}"@"${SERVER_IP}" -o "StrictHostKeyChecking no"  \
@@ -30,6 +29,7 @@ export NEXT_PUBLIC_PROTOCOL='https' && \
 export ADMIN_ENABLED='${ADMIN_ENABLED}' && \
 export ADMIN_EMAIL='${ADMIN_EMAIL}' && \
 export ADMIN_PASSWORD='${ADMIN_PASSWORD}' && \
+export NEXT_PUBLIC_SERVER_URL='${NEXT_PUBLIC_SERVER_URL}' && \
 export ADMIN_COOKIE_PASSWORD='${ADMIN_COOKIE_PASSWORD}' && \
 gcloud auth configure-docker '${LOCATION}-docker.pkg.dev' --quiet && \
 docker pull '${LOCATION}-docker.pkg.dev/${PROJECT_NAME}/frontend/${DOMAIN_NAME}-frontend:latest' && \
@@ -38,6 +38,11 @@ LOCATION='${LOCATION}' \
 PROJECT_NAME='${PROJECT_NAME}' \
 DOMAIN_NAME='${DOMAIN_NAME}' \
 MONGO_URI='${MONGO_URI}' \
+NEXT_PUBLIC_SERVER_URL='${NEXT_PUBLIC_SERVER_URL}' \
+ADMIN_ENABLED='${ADMIN_ENABLED}' && \
+ADMIN_EMAIL='${ADMIN_EMAIL}' && \
+ADMIN_PASSWORD='${ADMIN_PASSWORD}' && \
+ADMIN_COOKIE_PASSWORD='${ADMIN_COOKIE_PASSWORD}' && \
 NEXT_PUBLIC_PROTOCOL='https' \
 NEXT_PUBLIC_FRONT_END_ENV='${NODE_ENV}' \
 docker compose -f docker-compose.frontend-prod.yml up -d"
