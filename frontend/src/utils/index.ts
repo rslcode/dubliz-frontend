@@ -113,7 +113,7 @@ export const computeReviewsAverage = (reviews: Review[]) => {
   return sum / reviews.length
 }
 
-export const generateNameForAccount = (acc: Account) => {
+export const generateNameForAccount = (acc: any) => {
   if (acc == null) {
     return 'Unknown'
   }

@@ -16,6 +16,8 @@ import {VerifiedBadge} from "@/components/common/verified-badge";
 import ThemeChanger from "@/components/footer/change-theme-button";
 import {languages} from '@/app/i18n/settings'
 import {LANGUAGES_META} from '@/constants/languages'
+import user from "@/../public/assets/svg/profile/user.svg"
+import {AppLogo} from "@/components/common/app-logo";
 
 export const HeaderAccountButton = observer((props: { handleBuyCoins: () => void }) => {
     const {handleBuyCoins} = props
@@ -107,20 +109,20 @@ export const HeaderAccountButton = observer((props: { handleBuyCoins: () => void
         router.push(`${newPath}?lang=${newLang}`)
     }
 
-    if (!account) {
-        return (
-            <div>
-                <Link href="/auth/login">
-                    <button className="profile-btn" aria-label={t('header.profile')}>
-                        <div className="placeholder-icon">
-                            <Icon type={'header/profile'} size={24}/>
-                        </div>
-                        {t('header.profile')}
-                    </button>
-                </Link>
-            </div>
-        )
-    }
+    // if (!account) {
+    //     return (
+    //         <div>
+    //             <Link href="/auth/login">
+    //                 <button className="profile-btn" aria-label={t('header.profile')}>
+    //                     <div className="placeholder-icon">
+    //                         <Icon type={'header/profile'} size={24}/>
+    //                     </div>
+    //                     {t('header.profile')}
+    //                 </button>
+    //             </Link>
+    //         </div>
+    //     )
+    // }
 
     return (
         <div className={`pos-rel cursor-pointer ${menuVisible ? 'show-element' : ''}`}>
@@ -129,10 +131,19 @@ export const HeaderAccountButton = observer((props: { handleBuyCoins: () => void
                     <Image
                         width={38}
                         height={38}
-                        src={account?.picture || ''}
+                        src={
+                            account?.picture ||
+                            "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                 <circle cx="50" cy="50" r="50" fill="#E0E0E0"/>
+                                 <circle cx="50" cy="35" r="15" fill="#BDBDBD"/>
+                                 <path d="M20 85C20 70 33 58 50 58C67 58 80 70 80 85" fill="#BDBDBD"/>
+                            </svg>`)
+                        }
                         alt="profile-img"
-                        style={{borderRadius: '50%'}}
+                        style={{borderRadius: "50%"}}
                     />
+
                     <div className={"burger"}>
                         <span></span>
                         <span></span>
@@ -175,37 +186,58 @@ export const HeaderAccountButton = observer((props: { handleBuyCoins: () => void
                     ) : (
                         <>
                             <div className="profile-settings-root">
-                                <Link href="/profile">
-                                    <div className="d-flex align-items-center account-menu-header">
-                                        <div className="d-flex align-items-center gap-2">
-                                            <div className='position-relative'>
-                                                <Image
-                                                    width={60}
-                                                    height={60}
-                                                    src={account?.picture || ''}
-                                                    alt="profile-img"
-                                                    style={{borderRadius: '50%'}}
-                                                />
-                                                <div className='verified-badge-container'><VerifiedBadge
-                                                    verified={AppStore.accountData!.verified}/></div>
-                                            </div>
-                                            <div
-                                                className="d-flex align-items-center justify-content-between account-menu-header-name">
+                                {account ? <Link href="/profile">
+                                        <div className="d-flex align-items-center account-menu-header">
+                                            <div className="d-flex align-items-center gap-2">
+                                                <div className='position-relative'>
+                                                    <Image
+                                                        width={60}
+                                                        height={60}
+                                                        src={
+                                                            account?.picture ||
+                                                            "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                                           <circle cx="50" cy="50" r="50" fill="#E0E0E0"/>
+                                                           <circle cx="50" cy="35" r="15" fill="#BDBDBD"/>
+                                                           <path d="M20 85C20 70 33 58 50 58C67 58 80 70 80 85" fill="#BDBDBD"/>
+                                                        </svg>`)
+                                                        }
+                                                        alt="profile-img"
+                                                        style={{borderRadius: "50%"}}
+                                                    />
+                                                    <div className='verified-badge-container'><VerifiedBadge
+                                                        verified={AppStore.accountData!.verified}/></div>
+                                                </div>
                                                 <div
-                                                    className="d-flex flex-column align-items-start justify-content-center overflow-hidden">
+                                                    className="d-flex align-items-center justify-content-between account-menu-header-name">
+                                                    <div
+                                                        className="d-flex flex-column align-items-start justify-content-center overflow-hidden">
                                                     <span
                                                         className="account-name mb-2">{generateNameForAccount(account)}</span>
-                                                    <span className="account-email">{account?.email}</span>
-                                                </div>
-                                                <div className="ml-10">
-                                                    <Icon type="header/edit"/>
+                                                        <span className="account-email">{account?.email}</span>
+                                                    </div>
+                                                    <div className="ml-10">
+                                                        <Icon type="header/edit"/>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </Link>
+                                    :
+                                    <div className="d-flex align-items-center justify-content-between">
+                                        <AppLogo/>
+                                        <Link href="/auth/login">
+                                            <button className={'border-btn auth-btn hidden-border-btn'}
+                                                    aria-label={t('info.manage_preferences')}
+                                            >
+                                                <span>{t('auth.sign_in.register_now')}</span>
+                                            </button>
+                                        </Link>
                                     </div>
-                                </Link>
+                                }
                             </div>
-                            <ul>
+
+                            {account && <ul>
                                 <li className="account-menu-item buy-coins-account-menu-item">
                                     <div
                                         className="d-flex align-items-start flex-column p-16"
@@ -223,28 +255,31 @@ export const HeaderAccountButton = observer((props: { handleBuyCoins: () => void
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul>}
+
                             <ul style={{borderBottom: '1px solid var(--separator)'}}>
-                                <li className="account-menu-item">
-                                    <Link href={`/profile?tab=auctions`} className="w-100 account-menu-link d-flex">
-                                        <div className="d-flex align-items-center gap-2">
-                                            <Icon type="header/auction"/>
-                                            <span>
+                                {account && <>
+                                    <li className="account-menu-item">
+                                        <Link href={`/profile?tab=auctions`} className="w-100 account-menu-link d-flex">
+                                            <div className="d-flex align-items-center gap-2">
+                                                <Icon type="header/auction"/>
+                                                <span>
                                                {t('header.my_auctions')} ({auctionsCount})
                                             </span>
-                                        </div>
-                                    </Link>
-                                </li>
-                                <li className="account-menu-item">
-                                    <Link href={`/profile?tab=bids`} className="w-100 account-menu-link">
-                                        <div className="d-flex align-items-center gap-2">
-                                            <Icon type="header/bid"/>
-                                            <span>
+                                            </div>
+                                        </Link>
+                                    </li>
+                                    <li className="account-menu-item">
+                                        <Link href={`/profile?tab=bids`} className="w-100 account-menu-link">
+                                            <div className="d-flex align-items-center gap-2">
+                                                <Icon type="header/bid"/>
+                                                <span>
                                                   {t('header.my_bids')} ({bidsCount})
                                              </span>
-                                        </div>
-                                    </Link>
-                                </li>
+                                            </div>
+                                        </Link>
+                                    </li>
+                                </>}
                                 <li className="account-menu-item" onClick={() => setShowLanguageMenu(true)}>
                                     <div className="w-100 account-menu-link d-flex">
                                         <div className="d-flex align-items-center gap-2">
@@ -280,7 +315,7 @@ export const HeaderAccountButton = observer((props: { handleBuyCoins: () => void
                                         </div>
                                     </div>
                                 </li>
-                                <li
+                                {account && <li
                                     className="account-menu-item account-menu-link log-out"
                                     onClick={() => {
                                         handleLogout()
@@ -292,7 +327,7 @@ export const HeaderAccountButton = observer((props: { handleBuyCoins: () => void
                                         </div>
                                         <span>{t('profile.sign_out')}</span>
                                     </div>
-                                </li>
+                                </li>}
                             </ul>
                         </>
                     )}
@@ -436,6 +471,15 @@ export const HeaderAccountButton = observer((props: { handleBuyCoins: () => void
                     border-radius: 12px;
                     height: auto;
                     color: var(--font_1) !important
+                }
+
+                .auth-btn {
+                    border: 1px solid var(--font_1);
+                    color: var(--font_1);
+
+                    &:hover {
+                        border-color: var(--font_1);
+                    }
                 }
 
             `}</style>

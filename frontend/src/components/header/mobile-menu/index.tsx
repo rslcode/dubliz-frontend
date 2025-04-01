@@ -84,69 +84,71 @@ export const MobileMenu = observer(
         return (
             <>
                 <div className={opened ? 'side-info info-open' : 'side-info'} ref={mobileMenuRef}>
-                    {!account?.id ? (
-                        <div className="p-3">
-                            <AnonymousMobileMenu handleClose={handleClose}/>
-                        </div>
-                    ) : (
-                        <>
-                            <div className="profile-menu" ref={chatMenuRef}>
-                                <div className="side-info-content">
-                                    <div className="row align-items-center">
-                                        <div className="col-9">
-                                            <AppLogo/>
-                                        </div>
-                                        <div className={`col-3 ${direction === 'rtl' ? 'text-start' : 'text-end'}`}>
-                                            <button className="side-info-close" aria-label="close"
-                                                    onClick={handleClose}>
-                                                <Icon type="generic/close-filled"/>
-                                            </button>
-                                        </div>
+                    <>
+                        <div className="profile-menu" ref={chatMenuRef}>
+                            <div className="side-info-content">
+                                <div className="row align-items-center">
+                                    <div className="col-9">
+                                        <AppLogo/>
+                                    </div>
+                                    <div className={`col-3 ${direction === 'rtl' ? 'text-start' : 'text-end'}`}>
+                                        <button className="side-info-close" aria-label="close" onClick={handleClose}>
+                                            <Icon type="generic/close-filled"/>
+                                        </button>
                                     </div>
                                 </div>
-                                <div className="position-relative" style={{zIndex: 9999}}>
-                                    {showLanguageMenu ? (
-                                        <ul>
-                                            <li onClick={() => setShowLanguageMenu(false)}>
-                                                <div className="w-100 d-flex">
-                                                    <div className="d-flex align-items-center gap-2 mb-2">
-                                                        <Icon type="arrows/arrow-left" size={24}/>
-                                                        <span>{t('header.back')}</span>
-                                                    </div>
+                            </div>
+                            <div className="position-relative" style={{zIndex: 9999}}>
+                                {showLanguageMenu ? (
+                                    <ul>
+                                        <li onClick={() => setShowLanguageMenu(false)}>
+                                            <div className="w-100 account-menu-link d-flex">
+                                                <div className="d-flex align-items-center gap-2 mb-2">
+                                                    <Icon type="arrows/arrow-left" size={24}/>
+                                                    <span>{t('header.back')}</span>
                                                 </div>
-                                            </li>
-                                            {languages.map((l, i) => {
-                                                const languageMeta = LANGUAGES_META[l]
-                                                const isActive = currentLanguage === l
-                                                return (
-                                                    <li
-                                                        key={i}
-                                                        className={`account-menu-item ${isActive ? 'active-language' : ''}`}
-                                                        onClick={() => !isActive && redirectToNewLanguage(l)}
-                                                    >
-                                                        <div className="w-100 account-menu-link d-flex">
-                                                            <div className="d-flex align-items-center gap-2">
-                                                                <Icon type={languageMeta.icon}/>
-                                                                <span>{languageMeta.name}</span>
-                                                            </div>
+                                            </div>
+                                        </li>
+                                        {languages.map((l, i) => {
+                                            const languageMeta = LANGUAGES_META[l]
+                                            const isActive = currentLanguage === l
+                                            return (
+                                                <li
+                                                    key={i}
+                                                    className={`account-menu-item ${isActive ? 'active-language' : ''}`}
+                                                    onClick={() => !isActive && redirectToNewLanguage(l)}
+                                                >
+                                                    <div className="w-100 account-menu-link d-flex">
+                                                        <div className="d-flex align-items-center gap-2">
+                                                            <Icon type={languageMeta.icon}/>
+                                                            <span>{languageMeta.name}</span>
                                                         </div>
-                                                    </li>
-                                                )
-                                            })}
-                                        </ul>
-                                    ) : (
-                                        <>
-                                            <div className="profile-settings-root mt-10">
-                                                <Link href="/profile">
+                                                    </div>
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+                                ) : (
+                                    <>
+                                        <div className="profile-settings-root">
+                                            {account ? <Link href="/profile">
                                                     <div className="d-flex align-items-center account-menu-header">
                                                         <div className="d-flex align-items-center gap-2">
                                                             <div className='position-relative'>
                                                                 <Image
-                                                                    width={60}
-                                                                    height={60}
-                                                                    src={account?.picture || ''}
+                                                                    width={38}
+                                                                    height={38}
+                                                                    src={
+                                                                        account?.picture ||
+                                                                        "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                                                                             <circle cx="50" cy="50" r="50" fill="#E0E0E0"/>
+                                                                              <circle cx="50" cy="35" r="15" fill="#BDBDBD"/>
+                                                                              <path d="M20 85C20 70 33 58 50 58C67 58 80 70 80 85" fill="#BDBDBD"/>
+                                                                        </svg>`)
+                                                                    }
                                                                     alt="profile-img"
-                                                                    style={{borderRadius: '50%'}}
+                                                                    style={{borderRadius: "50%"}}
                                                                 />
                                                                 <div className='verified-badge-container'><VerifiedBadge
                                                                     verified={AppStore.accountData!.verified}/></div>
@@ -155,10 +157,9 @@ export const MobileMenu = observer(
                                                                 className="d-flex align-items-center justify-content-between account-menu-header-name">
                                                                 <div
                                                                     className="d-flex flex-column align-items-start justify-content-center overflow-hidden">
-                                                    <span
-                                                        className="account-name mb-2">{generateNameForAccount(account)}</span>
-                                                                    <span
-                                                                        className="account-email">{account?.email}</span>
+                                                             <span
+                                                                 className="account-name mb-2">{generateNameForAccount(account)}</span>
+                                                                    <span className="account-email">{account?.email}</span>
                                                                 </div>
                                                                 <div className="ml-10">
                                                                     <Icon type="header/edit"/>
@@ -167,36 +168,50 @@ export const MobileMenu = observer(
                                                         </div>
                                                     </div>
                                                 </Link>
-                                            </div>
-                                            <ul>
-                                                <li className="account-menu-item buy-coins-account-menu-item">
+                                                :
+                                                <div className="auth-btn-block">
+                                                    <Link href="/auth/login">
+                                                        <button
+                                                            className={'border-btn auth-btn hidden-border-btn w-100'}
+                                                            aria-label={t('info.manage_preferences')}>
+                                                            <span>{t('auth.sign_in.register_now')}</span>
+                                                        </button>
+                                                    </Link>
+                                                </div>
+                                            }
+                                        </div>
+
+                                        {account && <ul>
+                                            <li className="account-menu-item buy-coins-account-menu-item">
+                                                <div
+                                                    className="d-flex align-items-start flex-column p-16"
+                                                    onClick={toggleBuyCoinsModal}
+                                                >
                                                     <div
-                                                        className="d-flex align-items-start flex-column p-16"
-                                                        onClick={toggleBuyCoinsModal}
-                                                    >
-                                                        <div
-                                                            className="d-flex align-items-start justify-content-start gap-2 w-100">
-                                                            <Icon type="generic/coin" size={30}/>
-                                                            <div className="d-flex flex-column">
-                                                            <span className="fw-bold">
-                                                                 {t('buy_coins.coins_no', {no: AppStore.accountData?.coins ?? 0})}
-                                                            </span>
-                                                                <span
-                                                                    className="fw-light buy_coins_description">{t('info.buy_coins_description')}</span>
-                                                            </div>
+                                                        className="d-flex align-items-start justify-content-start gap-2 w-100">
+                                                        <Icon type="generic/coin" size={30}/>
+                                                        <div className="d-flex flex-column">
+                                                <span className="fw-bold">
+                                                {t('buy_coins.coins_no', {no: AppStore.accountData?.coins ?? 0})}
+                                            </span>
+                                                            <span
+                                                                className="fw-light buy_coins_description">{t('info.buy_coins_description')}</span>
                                                         </div>
                                                     </div>
-                                                </li>
-                                            </ul>
-                                            <ul>
+                                                </div>
+                                            </li>
+                                        </ul>}
+
+                                        <ul style={{borderBottom: '1px solid var(--separator)'}}>
+                                            {account && <>
                                                 <li className="account-menu-item">
-                                                    <Link onClick={() => handleClose()} href={`/profile?tab=auctions`}
+                                                    <Link href={`/profile?tab=auctions`}
                                                           className="w-100 account-menu-link d-flex">
                                                         <div className="d-flex align-items-center gap-2">
                                                             <Icon type="header/auction"/>
                                                             <span>
-                                                               {t('header.my_auctions')} ({auctionsCount})
-                                                            </span>
+                                               {t('header.my_auctions')} ({auctionsCount})
+                                            </span>
                                                         </div>
                                                     </Link>
                                                 </li>
@@ -211,73 +226,70 @@ export const MobileMenu = observer(
                                                         </div>
                                                     </Link>
                                                 </li>
-                                                <li className="account-menu-item"
-                                                    onClick={() => setShowLanguageMenu(true)}>
-                                                    <div className="w-100 account-menu-link d-flex">
-                                                        <div className="d-flex align-items-center gap-2">
-                                                            <Icon type="header/language"/>
-                                                            <span>{t('header.language')}</span>
-                                                        </div>
+                                            </>}
+                                            <li className="account-menu-item" onClick={() => setShowLanguageMenu(true)}>
+                                                <div className="w-100 account-menu-link d-flex">
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <Icon type="header/language"/>
+                                                        <span>{t('header.language')}</span>
                                                     </div>
-                                                </li>
-                                                <li className="account-menu-item">
-                                                    <Link onClick={() => handleClose()} href={`#`}
-                                                          className="w-100 account-menu-link">
-                                                        <div className="d-flex align-items-center gap-2">
-                                                            <Icon type="header/currency"/>
-                                                            <span>{t('header.currency')}</span>
-                                                        </div>
-                                                    </Link>
-                                                </li>
-                                                <li className="account-menu-item">
-                                                    <Link onClick={() => handleClose()} href={`#`}
-                                                          className="w-100 account-menu-link">
-                                                        <div className="d-flex align-items-center gap-2">
-                                                            <Icon type="header/about"/>
-                                                            <span>{t('header.about_us')}</span>
-                                                        </div>
-                                                    </Link>
-                                                </li>
-                                                <li className="account-menu-item mode">
-                                                    <div className="w-100 account-menu-link">
-                                                        <div
-                                                            className="d-flex align-items-center gap-2 justify-content-between">
-                                                            <div className="d-flex align-items-center gap-2">
-                                                                <Icon type="header/mode"/>
-                                                                <span>{t('header.mode')}</span>
-                                                            </div>
-                                                            <ThemeChanger/>
-                                                        </div>
+                                                </div>
+                                            </li>
+                                            <li className="account-menu-item">
+                                                <Link href={`#`} className="w-100 account-menu-link">
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <Icon type="header/currency"/>
+                                                        <span>{t('header.currency')}</span>
                                                     </div>
-                                                </li>
-                                                <li
-                                                    className="account-menu-item account-menu-link log-out"
-                                                    onClick={() => {
-                                                        handleLogout()
-                                                        handleClose()
-                                                    }}
-                                                >
+                                                </Link>
+                                            </li>
+                                            <li className="account-menu-item">
+                                                <Link href={`#`} className="w-100 account-menu-link">
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <Icon type="header/about"/>
+                                                        <span>{t('header.about_us')}</span>
+                                                    </div>
+                                                </Link>
+                                            </li>
+                                            <li className="account-menu-item mode">
+                                                <div className="w-100 account-menu-link">
                                                     <div
                                                         className="d-flex align-items-center gap-2 justify-content-between">
                                                         <div className="d-flex align-items-center gap-2">
-                                                            <Icon type="header/logout"/>
+                                                            <Icon type="header/mode"/>
+                                                            <span>{t('header.mode')}</span>
                                                         </div>
-                                                        <span>{t('profile.sign_out')}</span>
+                                                        <ThemeChanger/>
                                                     </div>
-                                                </li>
-                                            </ul>
-                                        </>
-                                    )}
-                                </div>
-                                <div
-                                    className="transparent-overlay overlay-open"
-                                    onClick={() => {
-                                        setMenuVisible(!menuVisible)
-                                    }}
-                                ></div>
+                                                </div>
+                                            </li>
+                                            {account && <li
+                                                className="account-menu-item account-menu-link log-out"
+                                                onClick={() => {
+                                                    handleLogout()
+                                                }}
+                                            >
+                                                <div
+                                                    className="d-flex align-items-center gap-2 justify-content-between">
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <Icon type="header/logout"/>
+                                                    </div>
+                                                    <span>{t('profile.sign_out')}</span>
+                                                </div>
+                                            </li>}
+                                        </ul>
+                                    </>
+                                )}
                             </div>
-                        </>
-                    )}
+                            <div
+                                className="transparent-overlay overlay-open"
+                                onClick={() => {
+                                    setMenuVisible(!menuVisible)
+                                }}
+                            ></div>
+                        </div>
+                    </>
+
                 </div>
                 <div className="offcanvas-overlay"></div>
                 <div className="offcanvas-overlay-white"></div>
@@ -415,6 +427,19 @@ export const MobileMenu = observer(
 
                     .logout-icon {
                         margin-left: 3px;
+                    }
+
+                    .auth-btn-block {
+                        padding: 0 20px;
+                    }
+
+                    .auth-btn {
+                        border: 1px solid var(--font_1);
+                        color: var(--font_1);
+
+                        &:hover {
+                            border-color: var(--font_1);
+                        }
                     }
                 `}</style>
             </>

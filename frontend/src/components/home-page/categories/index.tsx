@@ -156,8 +156,7 @@ export const CategoriesSection = observer(
                         </button>
                     ) : (
                         <Link href="/auth/login">
-                            <button
-                                className={`${!screenIsBig ? 'border-btn' : 'hidden-border-btn'} mr-5`}
+                            <button className={'border-btn hidden-border-btn mr-5'}
                                 aria-label={t('info.manage_preferences')}
                             >
                                 <span>{t('info.manage_preferences')}</span>
